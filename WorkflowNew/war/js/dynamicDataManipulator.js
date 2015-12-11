@@ -279,7 +279,7 @@ var dd =
 					
 				break;
 					
-				case 'waiting':
+				/*case 'waiting':
 					var interactionid	= jsonData.interactionId;
 					
 					if(this.currentStatusmap.hasOwnProperty(interactionid))
@@ -295,7 +295,7 @@ var dd =
 					this.iCount.inprogress += 1; 
 					this.manipulateCounterForStatus('waiting');
 					
-				break;
+				break;*/
 					
 				case 'InQueue(IR)':
 					var interactionid	= jsonData.interactionId;

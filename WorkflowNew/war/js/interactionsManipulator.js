@@ -626,7 +626,7 @@ var interactionsManipulator =
 				
 			break;
 			
-			case 'callended':
+		/*	case 'callended':
 
 				if(dd.currentStatusmap.hasOwnProperty(interactionid))
 				{
@@ -641,7 +641,7 @@ var interactionsManipulator =
 				dd.iCount.completed += 1;
 				dd.manipulateCounterForStatus('completed');
 
-			break;
+			break;*/
 
 			case 'dialout':
 
