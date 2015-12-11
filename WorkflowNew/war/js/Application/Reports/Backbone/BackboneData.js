@@ -1,0 +1,1 @@
+window.BackboneData = window.BackboneData || {};

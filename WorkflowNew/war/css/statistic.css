@@ -1,0 +1,109 @@
+.past_work_hrs 
+{
+	border: 1px solid #e0e0e0;
+	border-width: 0px 1px 1px 1px;
+	border-radius: 5px;
+	background: #f9f9f9;
+}
+.box_holder 
+{
+	clear: both;
+	background: #fff;
+	max-width: 900px;
+	margin: auto;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td 
+{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 14px;
+	vertical-align: middle;
+}
+body {
+	/* background: #ffffff;
+	font-family: "Helvetica Neue";
+	font-size: 100%; */
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #333333;
+  background-color: #ffffff;
+}
+.box_holder table {
+	width: 100%;
+	/* min-width: 500px; */
+	border-top: 1px solid #e2e2e2;
+	color: #7e888b;
+	padding: 1px 20px 1px 20px;
+	background: none;
+}
+table {
+max-width: 100%;
+background-color: transparent;
+border-collapse: collapse;
+border-spacing: 0;
+}
+table {
+display: table;
+border-collapse: separate;
+border-spacing: 2px;
+border-color: gray;
+}
+table[Attributes Style] {
+border-spacing: 0px;
+}
+table {
+border-collapse: separate;
+border-spacing: 0;
+}
+.btn_holder {
+margin-top: 5px;
+margin-bottom: 5px;
+position: relative;
+}
+.past_hrs {
+float: left;
+}
+.box_header.mt {
+margin-top: 35px;
+margin-bottom: 5px;
+}
+.box_header {
+max-width: 900px;
+margin: auto;
+}
+button.dropdown_btn.btn2 {
+padding: 4px 8px 4px 3px;
+}
+.btn_holder>.dropdown_btn {
+position: relative;
+margin-bottom: 0;
+font-weight: 400;
+cursor: pointer;
+white-space: nowrap;
+padding: 6px 12px;
+font-size: 14px;
+line-height: 1.42857143;
+border-radius: 4px;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+text-align: left;
+}
+.past_hrs button, .past_hrs button:hover {
+background: none;
+border: 0px;
+font-size: 20px !important;
+font-family: 'Helvetica Neue';
+padding: 6px 0px;
+}
+button {
+-webkit-appearance: button;
+}
+input, textarea, keygen, select, button, meter, progress {
+-webkit-writing-mode: horizontal-tb;
+}

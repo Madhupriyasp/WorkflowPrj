@@ -1,0 +1,1041 @@
+{namespace acti.workflow.reports}
+
+/**
+ * AppShell
+ * @param attributes AppShellView Details
+ */
+{template .appShell}
+		<!-- {$attributes.test} -->
+		<!-- Workflow Shell View Starts -->
+		<div id="shell-view" class="">
+
+			<!-- Header Wrapper Starts -->
+			<div id="header-wrapper">
+
+			</div>
+			<!-- Header Wrapper Ends -->
+
+			<!-- Main Container Wrapper Starts -->
+			<div id="main-container-wrapper" class="main-container-wrapper">
+
+			</div>
+			<!-- Main Container Wrapper Ends -->
+
+		</div>
+		<!-- Workflow Shell View Ends -->
+{/template}
+
+/**
+ * Header
+ * @param attributes Header Details
+ */
+{template .header}
+			<!-- {$attributes.test} -->
+				<!-- Header Starts -->
+				<nav id="header" class="navbar navbar-inverse" role="navigation">
+					<div class="container-fluid">
+						<div class="navbar-header pull-left">
+							<button class="navbar-toggle collapsed pull-left"
+								data-toggle="collapse" data-target=".navbar-collapse">
+								<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+									class="icon-bar"></span>
+							</button>
+							<a href="#" class="navbar-brand">Workflow Management</a>
+						</div>
+			
+						<ul class="nav nav-pills pull-right fetch_log">
+						<li>
+							<a id="hide-fetch" href="javascript:void(0)">Fetch&nbsp;&nbsp;&nbsp;|</a>
+							<div class="popover bottom" id="fetchdtl">
+								<div class="arrow"></div>
+								<div class="popover-content">
+									<input id="fetchinbox" type="text" placeholder="Enter 8xx / 1xx / Skill" class="fch_input">
+									<a id="fetch" class="btn btn-success btn-fch">Fetch</a>
+								</div>
+							</div>
+
+							<div class="popover bottom" id="selectType">
+								<div class="arrow"></div>
+								<div class="popover-content">
+									<a>Fetch By</a>
+									<select>
+										<option>Select</option>
+									</select>
+								</div>
+							</div>
+
+
+						</li>
+						<li class="sign pull-right">
+							<div class="full_dtl">
+								<img src="/images/user-icon.jpg" onerror='this.src = "/images/user-icon.jpg"'></div>
+								<div class="popover bottom" id="log_dtl">
+									<div class="arrow"></div>
+									<!-- <h3 class="popover-title">Popover bottom</h3> -->
+									<div class="popover-content">
+										<div class="userimg pull-left">
+											<img src="{$attributes.photoURL}" onerror='this.src = "/images/user-icon.jpg"' >
+										</div>
+										<div class="userdtl pull-left"> 
+											<h5 style="text-transform: lowercase;">{$attributes.currentUser}</h5>
+											<span></span>
+										</div>
+									</div>
+									<div class="clearfix"></div>
+									<div class="sign_foot">
+										<a class="btn btn-default pull-right" onclick="deleteCookie( '{$attributes.currentUser}' )">Sign Out</a>
+									</div> 
+								</div>
+							</div>
+						</li>
+					</ul> 
+						
+						
+						<div class="navbar-collapse collapse">
+							<ul class="nav navbar-nav">
+								<li id="manageli"><a id="manage" href="/adminqueuegae">Manage Queue</a></li>
+								<li><a id="tools" href="/emaillistener">Tools</a></li>
+								<li id="internalli"><a href="/adminqueuegae?internalacc=true&fetch=false" id="internalAction"
+									style="cursor: pointer;">Internal Accounts</a></li>
+								<li><a href="/toolsmanager">Account Manager</a></li>
+								<li class= "active"><a href="/reports">Reports</a></li>
+								<!-- <li><a href="#">report</a></li> -->
+							</ul>
+							<!--nav nav-pills-->
+						</div>
+					</div>
+				</nav>
+				<!-- Header Ends -->
+{/template}
+
+/**
+ * Main Container
+ * @param attributes MainContainer Details
+ */
+{template .mainContainer}
+
+ 				<!-- Main Container Starts -->
+ 				<!-- {$attributes.test} -->
+				<div id="main-container" class="main-container row">
+
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 zero-padding">
+
+						<div class="row">
+
+							<!-- Team Pane Wrapper Starts -->
+							<div id="team-pane-wrapper" class="col-lg-2 col-md-2 col-sm-2 col-xs-2 zero-padding">
+
+							</div>
+							<!-- Team Pane Wrapper Ends -->
+
+							<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 zero-padding ">
+
+								<!-- Toolbar Wrapper Starts -->
+								<div id="toolbar-wrapper">
+								</div>
+								<!-- Toolbar Wrapper Ends -->
+
+								<!-- Members List Wrapper Starts -->
+								<div id="member-list-wrapper" class="member-list-wrapper team-desc-pane">
+								</div>
+								<!-- Members List Wrapper Starts -->
+								<div id="popover-container"></div>
+
+								<!-- Transcripts List Wrapper Starts -->
+								<div id="transcripts-list-wrapper" class="transcripts-list-wrapper">
+
+								</div>
+								<!-- Transcripts List Wrapper Starts -->
+
+								<!-- Interaction Details Starts -->
+								<!--
+								<div class="interaction-details-pane col-lg-9 col-md-9 col-sm-9 col-xs-9 zero-padding ">
+								</div>
+								-->
+								<!-- Interaction Details Ends -->
+
+								<!-- Transcripts Details Wrapper Starts -->
+								<div id="transcript-details-wrapper" class="transcript-details-wrapper">
+
+								</div>
+								<!-- Transcripts Details Wrapper Starts -->
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+				<!-- Main Container Ends -->
+
+{/template}
+
+
+/**
+ * Team Pane Shell
+ * @param attributes MainContainer Details
+ */
+{template .teamPaneShell}
+ 								<!-- Team Pane Shell Starts -->
+ 								<!-- {$attributes.test} -->
+								<div id="team-pane-shell" class="team-pane row">
+									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 zero-padding">
+
+										<div id="team-pane-header" class="row team-pane-header" style="">
+											<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 zero-padding">
+												<div id="main-account-number" class="main-account-number" style="">{$attributes.mainAccountNumber}</div>
+											</div>
+										</div>
+
+										<div class="row">
+											<div id="team-list" class="team-list col-lg-12 col-md-12 col-sm-12 col-xs-12 zero-padding">
+
+												<div class="row">
+													<table id="team-table" class="team-table col-lg-12 col-md-12 col-sm-12 col-xs-12 zero-padding">
+														<thead></thead>
+														<tbody id="team-cards-tbody">
+
+														</tbody>
+													</table>
+												</div>
+
+											</div>
+										</div>
+
+									</div>
+								</div>
+								<!-- Team Pane Shell Ends -->
+{/template}
+
+
+/**
+ * Toolbar
+ * @param attributes MainContainer Details
+ */
+{template .toolbar}
+									<!-- Toolbar Starts -->
+									<!-- {$attributes.test} -->
+									<div id="toolbar" class="row">
+										<div class="toolbar col-lg-12 col-md-12 col-sm-12 col-xs-12 zero-padding ">
+
+											<div class="row">
+
+												<div class="user-status-circle-div col-lg-1 col-md-1 col-sm-1 col-xs-1 zero-padding">
+													
+													<div class="inner">
+														<svg height="12" width="6">
+															<circle cx="0" cy="6" r="6" stroke="none" stroke-width="3" fill="#AAAAAA"></circle>
+															Sorry, your browser does not support inline SVG.  
+														</svg>
+														<hr>
+														<svg class="user-status-svg" height="20" width="20">
+															<circle cx="10" cy="10" r="8" stroke="#24E024" stroke-width="2" fill="none"></circle>
+															Sorry, your browser does not support inline SVG.  
+														</svg>
+													</div>
+
+												</div>
+
+												<div class="date-range col-lg-4 col-md-5 col-sm-5 col-xs-5 col-lg-offset-5 col-md-offset-4 col-sm-offset-4 col-xs-offset-4 zero-padding">
+
+													<div class="row">
+														<input id="from-date" type="text" class="date-picker-input col-lg-5 col-md-5 col-sm-5 col-xs-5 zero-padding">
+														<div class="date-picker-to col-lg-1 col-md-1 col-sm-1 col-xs-1 zero-padding">
+															To
+														</div>
+														<input id="to-date" type="text" class="date-picker-input col-lg-5 col-md-5 col-sm-5 col-xs-5 zero-padding">
+														<div class="go-date-range col-lg-1 col-md-1 col-sm-1 col-xs-1 zero-padding">
+															<a id="go-date-range" href="javascript:void(0)" class="btn btn-default">Go</a>
+														</div>
+													</div>
+
+												</div>
+
+												<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 zero-padding">
+
+													<div class="find-player right-inner-addon zero-padding">
+													    <i class="fa fa-user"></i>
+													    <input type="search" class="form-control" placeholder="Find Player..." />
+													</div>
+
+												</div>
+											</div>
+
+										</div>
+									</div>
+									<!-- Toolbar Ends -->
+{/template}
+
+/**
+ * Team Card
+ * @param attributes MainContainer Details
+ */
+{template .teamCard}
+ 												<!-- Team Card Starts -->
+ 												<!-- {$attributes.test} -->
+												<tr id="{$attributes.id}" class="team-card-tr"><td>
+													<div class="team-card">
+														<div class="row">
+															<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 zero-padding">
+																<div class="row"><div style="background-color: {$attributes.hexColorCode};" class="color-code col-lg-3 col-md-3 col-sm-3 col-xs-3 zero-padding">&nbsp;</div></div>
+															</div>
+															<div class="team-name text-dot col-lg-11 col-md-11 col-sm-11 col-xs-11 zero-padding">
+																{$attributes.teamName}
+															</div>
+													</div>
+												</td></tr>
+												<!-- Team Card Ends -->
+{/template}
+
+
+/**
+ * Members List Shell
+ * @param attributes MainContainer Details
+ */
+{template .memberListShell}
+									<!-- Members List Shell Starts -->
+									<!-- {$attributes.test} -->
+									<div id="members-list-shell" class="members-list-shell row">
+										<div class="members-pane col-lg-12 col-md-12 col-sm-12 col-xs-12 zero-padding ">
+											
+											<div class="row">
+												<div class="members-table-wrapper col-lg-3 col-md-3 col-sm-3 col-xs-3 zero-padding">
+													<table class="members-table">
+														<thead></thead>
+
+														<!-- Members TBody Starts -->
+														<tbody id="members-tbody">
+
+														</tbody>
+														<!-- Members TBody Ends -->
+
+													</table>
+												</div>
+
+												<div id="popover-container"></div>
+
+											</div>
+
+										</div>
+										<!-- Members List Shell Ends -->
+{/template}
+
+/**
+ * Members Card
+ * @param attributes MainContainer Details
+ */
+{template .memberCard}
+															<!-- Member Card Row Starts -->
+															<!-- {$attributes.test} -->
+															<tr id="{$attributes.id}" class="member-card-tr"><td>
+																<button class="member-card-button zero-padding" href="javascript:void(0)" rel="popover">
+																	<div class="member-card">
+																		<div class="row">
+																			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 zero-padding">
+																				<div class="row"><img src="{$attributes.agentPhotoURL}"
+																					class="member-img img-circle col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+																			</div>
+																			<div class="member-card-details col-lg-8 col-md-8 col-sm-8 col-xs-8 zero-padding">
+																				<div class="row"><div class="member-name text-dot col-lg-12 col-md-12 col-sm-12 col-xs-12 zero-padding">{$attributes.agentName}</div></div>
+																				<div class="row"><div class="interaction-total-heading text-dot col-lg-12 col-md-12 col-sm-12 col-xs-12 zero-padding">Interaction Total :</div></div>
+																				<div class="row"><div class="interaction-total text-dot col-lg-12 col-md-12 col-sm-12 col-xs-12 zero-padding">{$attributes.interactionTotal}</div></div>
+																			</div>
+																		</div>
+																	</div>
+																</button>
+																<!-- Member Card Row Ends -->
+															</tr></td>
+{/template}
+
+/**
+ * Interaction PopOver Content
+ * @param attributes MainContainer Details
+ */
+{template .interactionPopOverContent}
+				<!-- Interaction PopOver Content Starts -->
+				<!-- {$attributes.test} -->
+				<table class="interaction-pop-over-table">
+					<thead>
+						<tr><td colspan="2">Interaction Type</td><td>Completed</td><td>In-Queue</td><tr>
+					</thead>
+					<tbody>
+						{foreach $interactionOptions in $attributes.interactionsOptionsArray}
+								<tr><td class="color-code"><div style="background-color: {$interactionOptions.interactionTypeDetails.color};">&nbsp;</div></td><td><div>{$interactionOptions.interactionTypeDetails.name}</div></td><td><div>{$interactionOptions.completedTranscriptLength}</div></td><td class="last"><div>{$interactionOptions.inqueueTranscriptLength}</div></td></tr>
+							{ifempty}
+								<tr>
+									<td class="color-code"><div style="background-color: #000000;">&nbsp;</div></td>
+									<td colspan="3"><div>No interaction</div></td>
+								</tr>
+						{/foreach}
+					</tbody>
+				</table>
+				<!-- Interaction PopOver Content Ends -->
+{/template}
+
+
+/**
+ * Members List Shell
+ * @param attributes MainContainer Details
+ */
+{template .newMemberListShell}
+									<!-- Members List Shell Starts -->
+									<!-- {$attributes.test} -->
+									<div id="members-list-shell" class="members-list-shell row">
+										<div class="members-pane col-lg-12 col-md-12 col-sm-12 col-xs-12 zero-padding ">
+											
+											<div class="row">
+												<div class="member-pane-bar col-lg-12 col-md-12 col-sm-12 col-xs-12 zero-padding">
+
+													<!--
+													<div class="member-all col-lg-1 col-md-1 col-sm-1 col-xs-1 zero-padding">
+														<a id="member-all-a" class="member-all-a btn btn-default">All</a>
+													</div>
+													-->
+
+													<div id="member-list-left-scroll-arrow" class="member-list-left-scroll-arrow">
+														<a id="member-pane-left-arrow" class="member-pane-left-arrow" href="javascript:void(0);">
+															<i class="fa fa-caret-left fa-3x" style=""></i>
+														</a>
+													</div>
+
+													<div id="member-list-right-scroll-arrow" class="member-list-right-scroll-arrow">
+														<a id="member-pane-right-arrow" class="member-pane-right-arrow" href="javascript:void(0);">
+															<i class="fa fa-caret-right fa-3x" style=""></i>
+														</a>
+													</div>
+
+													<div class="members-ul-wrapper col-lg-12 col-md-12 col-sm-12 col-xs-12 zero-padding">
+														<ul id="members-ul" class="members-ul">
+
+														</ul>
+													</div>
+
+												</div>
+
+											</div>
+
+										</div>
+										<!-- Members List Shell Ends -->
+{/template}
+
+
+/**
+ * Members Card
+ * @param attributes MainContainer Details
+ */
+{template .newMemberCard}
+															<!-- Member Card Row Starts -->
+															<!-- {$attributes.test} -->
+															<li id="{$attributes.id}" class="member-card-li">
+																<button class="member-card-button zero-padding" href="javascript:void(0)" rel="popover">
+																	<div class="member-card">
+																		<div class="row">
+																			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 zero-padding">
+																				<div class="row"><img src="{$attributes.agentPhotoURL}"
+																					class="member-img img-circle col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+																			</div>
+																			<div class="member-card-details col-lg-8 col-md-8 col-sm-8 col-xs-8 zero-padding">
+																				<div class="row"><div class="member-name text-dot col-lg-12 col-md-12 col-sm-12 col-xs-12 zero-padding">{$attributes.agentName}</div></div>
+																				<div class="row"><div class="interaction-total-heading text-dot col-lg-12 col-md-12 col-sm-12 col-xs-12 zero-padding">Interaction Total :</div></div>
+																				<div class="row"><div class="interaction-total text-dot col-lg-12 col-md-12 col-sm-12 col-xs-12 zero-padding">{$attributes.interactionTotal}</div></div>
+																			</div>
+																		</div>
+																	</div>
+																</button>
+																<!-- Member Card Row Ends -->
+															</li>
+{/template}
+
+/**
+ * Transcript List Shell
+ * @param attributes MainContainer Details
+ */
+{template .transcriptListShell}
+															<!-- Transcript List Shell Starts -->
+															<!-- {$attributes.test} -->
+															<div id="transcript-list-shell" class="transcript-list-shell">
+																<div class="row">
+																	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 zero-padding">
+
+																		<!-- Transcript Toolbar Starts -->
+																		<div class="row">
+																			<div id="transcript-toolbar" class="transcript-toolbar col-lg-12 col-md-12 col-sm-12 col-xs-12 zero-padding">
+																			</div>
+																		</div>
+																		<!-- Transcript Toolbar Ends -->
+
+																		<!-- Transcript List Div Starts -->
+																		<div class="row">
+																			<div id="transcript-table-wrapper" class="transcript-table-wrapper col-lg-12 col-md-12 col-sm-12 col-xs-12 zero-padding">
+																				<table id="transcript-table" class="transcript-table table table-hover" >
+																					<thead>
+																						<tr>
+																							<th>Account ID</th>
+																							<th>Account Name</th>
+																							<th>Recieved By</th>
+																							<th>Status</th>
+																							<th>Recieved<span>{$attributes.timeZone}</span></th>
+																							<th>Completed<span>{$attributes.timeZone}</span></th>
+																							<th>TTA</th>
+																							<th>Duration</th>
+																							<th>TTC</th>
+																						</tr>
+																					</thead>
+
+																					<tbody id="transcript-table-tbody" class="transcript-table-tbody">
+																						
+																					</tbody>
+
+																				</table>
+																			</div>
+																		</div>
+																		<!-- Transcript List Div Ends -->
+
+																	</div>
+																</div>
+															</div>
+															<!-- Transcript List Shell Ends -->
+{/template}
+
+
+/**
+ * Transcript Card
+ * @param attributes MainContainer Details
+ */
+{template .transcriptCard}
+																						<!-- Transcript List Shell Starts -->
+																						<!-- {$attributes.test} -->
+																						<tr id="{$attributes.id}" class="transcript-card-tr">
+																						    {if $attributes.multiConId}
+																						   		<td class="acc_wdt multi_conID"></td>
+																						    {else}
+																						        <td class="acc_wdt"></td> 
+																						     {/if}   
+																							<td>{$attributes.subAccountNumber}</td>
+																							<td>{$attributes.subAccountName}</td>
+																							<td>{$attributes.agentLogin}</td>
+																							<td>
+																								<span style="background-color: {$attributes.statusColor};" class="label label-success">{$attributes.status}</span>
+																							</td>
+																							<td>{$attributes.recievedTime}</td>
+																							<td>{$attributes.completedTime}</td>
+																							<td>{$attributes.timeTakenToAnswer}</td>
+																							<td>{$attributes.duration}</td>
+																							<td>{$attributes.timeTakenToComplete}</td>
+																						</tr>
+																						<!-- Transcript List Shell Ends -->
+{/template}
+
+/**
+ * Transcript Pane Shell
+ * @param attributes Transcript Pane Shell
+ */
+{template .newTeamPaneShell}
+								<!-- Team Pane Shell Starts -->
+ 								<!-- {$attributes.test} -->
+								<div id="team-pane-shell" class="team-pane row">
+									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 zero-padding">
+
+										<!--
+										<div id="team-pane-header" class="row team-pane-header" style="">
+											<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 zero-padding">
+												<div id="main-account-number" class="main-account-number" style="">{$attributes.mainAccountNumber}</div>
+											</div>
+										</div>
+										-->
+
+										<div id="team-pane-header" class="row team-pane-header" style="">
+											<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 zero-padding">
+
+												<div class="row">
+													<div class="team-pane-heading col-lg-12 col-md-12 col-sm-12 col-xs-12 zero-padding">
+														Workflow Account
+													</div>
+												</div>
+												<div class="row">
+													<div class="search-team col-lg-12 col-md-12 col-sm-12 col-xs-12 zero-padding">
+														<input type="search" id="search-team-input" placeholder="Search..."/>
+													</div>
+												</div>
+
+											</div>
+										</div>
+
+										<div class="row">
+											<div id="team-list" class="team-list col-lg-12 col-md-12 col-sm-12 col-xs-12 zero-padding">
+
+												<div class="row">
+													<table id="team-table" class="team-table col-lg-12 col-md-12 col-sm-12 col-xs-12 zero-padding">
+														<thead></thead>
+														<tbody id="team-cards-tbody">
+
+														</tbody>
+													</table>
+												</div>
+
+											</div>
+										</div>
+
+									</div>
+								</div>
+								<!-- Team Pane Shell Ends -->
+{/template}
+
+/**
+ * New Team Card
+ * @param attributes New Team Card Details
+ */
+{template .newTeamCard}
+ 												<!-- Team Card Starts -->
+ 												<!-- {$attributes.test} -->
+												<tr id="{$attributes.id}" class="team-card-tr-new">
+													<td class="team-card-td-new">
+														<div id="{$attributes.id}" class="team-card-new row">
+															<table class="team-card-inner-table col-lg-12 col-md-12 col-sm-12 col-xs-12 zero-padding">
+																<tbody>
+																	<tr>
+																		<td class="color-code-td" style="background-color: {$attributes.hexColorCode};" rowspan="2"></td>
+																		<td class="account-type-td" rowspan="2"><i  id="account-type-icon" class="account-type-icon fa {$attributes.accountTypeIcon}"></i></td>
+																		<td class="domain-name-td"><div class="domain-name text-dot">{if $attributes.domainName}{$attributes.domainName}{else}&nbsp;{/if}</div></td>
+																	</tr>
+																	<tr>
+																		<td class="account-number-td"><div class="account-number text-dot">{if $attributes.accountNumber}{$attributes.accountNumber}{else}&nbsp;{/if}</div></td>
+																	</tr>
+																</tbody>
+															</table>
+														</div>
+													</td>
+												</tr>
+												<!-- Team Card Ends -->
+{/template}
+
+/**
+ * New Team Card
+ * @param attributes New Team Card Details
+ */
+{template .transcriptDetailsShell}
+	<!-- {$attributes.test} -->
+ <div id="transcript-details-shell" class="transcript-details-shell modal fade" id="detail_listing" aria-hidden="false">
+  <div class="modal-dialog" style="width: 965px; z-index:900;">
+    <div class="modal-content" style="height: 472px;">
+      <div class="modal-header">
+        <button id="closemodel" type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+        <h4 class="modal-title">Interaction Details</h4>
+      </div>
+      <div id="transcript-modal-body-wrapper" class="transcript-modal-body-wrapper modal-body">
+        	
+      		<!-- Transcript Modal Body -->
+
+      </div>
+
+      <div class="modal-footer">
+		<p style="text-align: center;">  
+		Powered by Workflow  </p>  
+	</div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+  <div id="reshcedule_modal_pop" class="popover fade right in" style="top: 30px; left: 300px; display: none; z-index: 900; height: 250px;">
+				<div class="arrow" style="top: 44px!important;"></div><h3 class="popover-title">Reschedule</h3>
+				<div class="popover-content">
+						<table style="">
+  					<tbody><tr>
+  						<td style="padding-bottom: 10px;padding-top: 10px;">
+  							<div class="input-group date col-sm-4">
+								<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+								<input type="text" class="form-control reschedule_date_picker" id="reschedule_date_modal" data-date-format="mm/dd/yyyy" style="width:150px" required="">
+			  				</div>
+  						</td>
+  					</tr>
+  					
+  					<tr>
+  						<td style="padding-bottom: 10px;">
+							<div class="input-group col-sm-4 bootstrap-timepicker">
+								<span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
+								<input type="text" class="form-control timepicker" id="reschedule_time_modal" value="11:30 PM" style="width:150px" required="">
+							</div>	
+  						</td>
+  					</tr>
+  					
+  					<tr>
+  						<td style="padding-bottom: 15px;">
+  							<div class="input-group col-sm-4 bootstrap-timepicker">
+								<span class="input-group-addon"><i class="fa fa-globe"></i></span>
+								<input type="text" class="form-control timezone_value" id="timezone_value_modal" value="PST" style="width:150px">
+							</div>	
+  						</td>
+  					</tr>
+  					
+  					<tr>
+  						<td align="center">
+  							<button onclick="intractionToSche('single')" type="button" id="Selected" class="btn btn-default" style="background-color: #f7f7f7!important;">Reschedule</button>
+  						</td>
+  					</tr>
+  				</tbody></table>				
+				</div>
+			</div>
+</div>
+
+{/template}
+
+/**
+ * Transcript Modal Body Shell
+ * @param attributes New Team Card Details
+ */
+{template .transcriptModalBodyShell}
+		
+		<!-- {$attributes.test} -->
+		<!-- Transcript Modal Body Shell Starts -->
+		<div id="transcript-modal-body-shell" class="transcript-modal-body-shell">
+
+			<div class="transcript-toolbar-wrapper">
+
+      			<!-- Transcript Toolbar Wrapper -->
+
+      		</div>
+              
+        	<div class="clearfix"></div>
+
+          	<div id="transcript-modal-details-wrapper" class="transcript-details-wrapper accounts">
+
+				<!-- Transcript Details -->
+
+            </div>
+
+            <div id="transcript-history-details-wrapper" class="transcript-history-details-wrapper status">
+
+          		<!-- Transcript History Details -->
+
+           </div>
+
+           <div id="transcript-full-details-wrapper" class="transcript-full-details-wrapper status_dtl">
+
+           		<!-- Transcript Full Details -->
+
+      		</div>
+
+      	</div>
+      	<!-- Transcript Modal Body Shell Ends -->
+{/template}
+
+/**
+ * Transcript Details
+ * @param attributes New Team Card Details
+ */
+{template .transcriptModalDetails}
+			<!-- {$attributes.test} -->
+			<!-- Transcript Details Starts -->
+			<div id="transcript-modal-details" class="transcript-modal-details">
+	            <table class="table pull-left">
+	              <tbody><tr>
+	                <td class="title">Account ID:</td>
+	                <td class="text" id="accountId">
+	                	<a href="/toolsmanager?accno={$attributes.subAccountNumber}" target="_blank" id="subAccCache">{$attributes.subAccountNumber}</a>
+	                </td>
+	                
+	              </tr>
+	              <tr>
+	                <td class="title">Recieved By:</td>
+	                <td class="text" id="accountLogin">{$attributes.agentName}</td>
+	              </tr>
+	              <tr>
+	                <td class="title">Status:</td>
+	                <td class="text" id="statusId">{$attributes.status}</td>
+	              </tr>
+	            </tbody></table>
+	            <div class="details">
+	                <table class="table pull-left">
+	                  <tbody><tr>
+	                    <td class="title">Recieved:</td>
+	                    <td class="text" id="dateAdded">{$attributes.recievedTime}&nbsp;<span>{$attributes.timeZone}</span></td>
+	                  </tr>
+	                  <tr>
+	                    <td class="title">Completed:</td>
+	                    <td class="text" id="DateCompleted">{$attributes.completedTime}&nbsp;<span>{$attributes.timeZone}</span></td>
+	                    <td style="display:none" class="text" id="decrem_increm">trid_84944514-aa40-42dc-8275-1ffdac98cd2e_history</td>
+	                  </tr>
+	                  <tr>
+	                   <td class="title" id="answerTime"><span id="ttapop" data-toggle="tooltip" title="" data-placement="top" data-original-title="Time To Answer">TTA:</span></td>
+	                    <td class="text" id="ansTime">{$attributes.timeTakenToAnswer}</td>
+	                  </tr>
+	                  <tr>
+	                    <td class="title">Duration</td>
+	                    <td class="text" id="timeSpent">{$attributes.duration}</td>
+	                  </tr>
+	                </tbody></table>
+                </div>
+                <!-- Transcript Details Ends -->
+{/template}
+
+/**
+ * Transcript Details
+ * @param attributes New Team Card Details
+ */
+{template .transcriptHistoryList}
+
+			<!-- Transcript History List Starts -->
+			<!-- {$attributes.test} -->
+			<div id="transcript-history-details" class="transcript-history-details">
+
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 zero-padding">
+
+						<div class="row">
+							<table id="transcript-history-details-table" class="transcript-history-details-table table table-hover col-lg-12 col-md-12 col-sm-12 col-xs-12 zero-padding" >
+								<thead>
+									<tr>
+										<th>Date and Time</th>
+										<th>Connection ID</th>
+										<th>Status</th>
+										<th>Recieved By</th>
+										 {if $attributes.hasPhone }
+										   <th id='phno_head' class='due_wd'>Phone</th>
+										   <th id='obHead' class='obID' style='visiblity:hidden'></th>
+										 {/if}
+									</tr>
+								</thead>
+
+								<tbody id="transcript-table-tbody" class="transcript-table-tbody">
+									{foreach $interactionHistory in $attributes.interactionHistories}
+										<tr>
+											<td>{$interactionHistory.dateString}</td>
+											<td>{$interactionHistory.connectionId}</td>
+											<td>{$interactionHistory.action}</td>
+											<td>{$interactionHistory.AgentLogin}</td>
+											{if not not($interactionHistory.phoneNumber)}
+												{if $interactionHistory.outboundConnectionID == 'NA' and $interactionHistory.phoneNumber == 'NA' }
+														<td class='due_wd' title='NA'>{$interactionHistory.phoneNumber}</td>
+														<td class='obID'><div id='d_clip_button' class='clip_button fa fa-files-o' data-clipboard-text='NA' title='Click to copy.' style='float: right;cursor: pointer;margin-top:1px;visibility:hidden'></div></td>
+												{else}
+														<td class='due_wd' title='{$interactionHistory.outboundConnectionID}'>{$interactionHistory.phoneNumber}</td>
+														<td class='obID'><div id='d_clip_button' class='clip_button fa fa-files-o' data-clipboard-text='{$interactionHistory.outboundConnectionID}' title='Click to copy.' style='float: right;cursor: pointer;margin-top:1px;'></div></td>
+												{/if}
+											    
+											{/if}
+										</tr>
+										{ifempty}
+											<td colspan="4">No History</td>
+									{/foreach}
+								</tbody>
+
+							</table>
+						</div>
+
+					</div>
+				</div>
+
+           </div>
+           <!-- Transcript History List Ends -->
+{/template}
+
+
+/**
+ * Transcript Details Toolbar
+ * @param attributes New Team Card Details
+ */
+{template .transcriptDetailsToolbar}
+		<!-- Transcript Toolbar Starts -->
+		<!-- {$attributes.test} -->
+		<div id="transcript-details-toolbar" class="transcript-details-toolbar page-icon">
+          <div class="">
+            
+            <div class="pg_opt">
+                <a id="reshedule-transcript" href="javascript:void(0);"><i id="reschedule_modal" class="fa fa-retweet" data-toggle="tooltip" title="" data-original-title="Reschedule"></i></a>
+                <a id="delete-transcript" href="javascript:void(0);"><i class="fa fa-trash-o" data-toggle="tooltip" title="" data-original-title="Delete"></i></a>
+                <a id="mark-completed-transcript" href="javascript:void(0);"><i class="fa fa-check" data-toggle="tooltip" title="" data-original-title="Mark Completed"></i></a>
+            </div>
+          </div>
+
+          <div class="order_opt">
+              <div class="sort_arrow pull-right">
+                <a id="next-transcript" href="javascript:void(0);"><i class="fa fa-chevron-left"></i></a>
+                <a id="prev-transcript" href="javascript:void(0);"><i class="fa fa-chevron-right"></i></a>         
+              </div>
+            <div class="pgshow_opt pull-right">
+               <a id="message-view" href="javascript:void(0);" class="active"><i class="fa fa-envelope" data-toggle="tooltip" title="Mail View" data-original-title="Mail View"></i></a>
+                <a id="table-view" href="javascript:void(0);" class=""><i class="fa fa-table" data-toggle="tooltip" title="Table View" data-original-title="Table View"></i></a>
+            </div>
+                
+          </div>
+        </div>
+        <!-- Transcript Toolbar Ends -->
+{/template}
+
+
+/**
+ * Transcript Details
+ * @param attributes New Team Card Details
+ */
+{template .transcriptFullDetail}
+			<!-- Transcript Full Detail Starts -->
+			<!-- {$attributes.test} -->
+           	<div id="transcript-full-details" class="transcript-full-details">
+
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 zero-padding">
+
+						<div class="row">
+							<table id="transcript-full-details-table" class="transcript-full-details-table col-lg-12 col-md-12 col-sm-12 col-xs-12 zero-padding" >
+								<thead></thead>
+
+								<tbody id="transcript-full-details-tbody" class="transcript-full-details-tbody">
+									{foreach $message in $attributes.messages}
+										<tr>
+											<th>{$message.key}</th>
+											{if $message.key == 'uniquepin'}
+											   <td><a target="_blank" href="{$message.value}">{$message.value}</a></td>
+											{else} 
+											   <td>{$message.value}</td>
+											{/if}
+										</tr>
+										{ifempty}
+											<td colspan="4">No Message</td>
+									{/foreach}
+								</tbody>
+
+							</table>
+						</div>
+
+					</div>
+				</div>
+
+           	</div>
+           	<!-- Transcript Full Detail Ends -->
+{/template}
+
+
+
+/**
+ * Transcript Details
+ * @param attributes chat history list
+ */
+{template .transcriptFullDetailChat}
+			<!-- Transcript Full Detail Chat Starts -->
+			<!-- {$attributes.test} -->
+			
+			
+			
+
+
+	<div id="transcript-full-details" class="transcript-full-details">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 zero-padding">
+				<div class="row">
+					<table id="transcript-full-details-table" class="transcript-full-details-table col-lg-12 col-md-12 col-sm-12 col-xs-12 zero-padding">
+						<thead>
+							<tr id="transcript-details-domain-name-tr" class="transcript-details-domain-name-tr">
+								<th colspan="2">{$attributes.messageDetails.domainName}</th>
+							</tr>
+							<tr id="from-to-details-tr" class="from-to-details-tr">
+								<th colspan="3">
+									<table id="transcript-full-details-user-details" class="transcript-full-details-user-details">
+										<tr>
+											<td rowspan="2">
+												<img src= "{$attributes.messageDetails.userImage}"  id="transcript-full-details-img" class="transcript-full-details-img" />
+											</td>
+											<td>
+											    {if not not($attributes.messageDetails.name)}
+													<p>{$attributes.messageDetails.name}</p>
+													<span style="font-size:14px; color:#999999; margin-top: 2px;">{$attributes.messageDetails.from}</span>
+											    {else}
+											    		{$attributes.messageDetails.from}
+												{/if}
+											</td>
+										</tr>
+									</table>
+								</th>
+							</tr>
+						</thead>
+						<tbody id="transcript-full-chat-details-tbody" class="transcript-full-chat-details-tbody">
+									<tr>
+										<td class="chatheader">User</td>
+										<td class="chatheader">Chat</td>
+										<td class="chatheader">Dates and Time</td>
+									</tr>
+									{if isNonnull($attributes.metaData)}
+									<tr>
+									    <td></td>
+									    <td class="chatmsg">
+									    		<table>
+									                   {foreach $metaData in $attributes.metaData}
+									                     <tr>
+									                     	<td>{$metaData.key}</td>
+									                     	<td>: {$metaData.value}</td>
+									                     </tr>
+									                   {/foreach}
+									    		</table>
+									    </td>
+									    <td></td>
+									</tr>
+									{/if}
+											{foreach $message in $attributes.messages}
+													{if $message.user == 'Prechatsurvey' or $message.user == 'Offlineform'}
+													     {if not not($message.chat) and $message.chat.length > 0}
+													     	<tr>
+																<td class="chatuser"><p>{$message.user}</p></td>
+																<td>
+																	<table>
+														                   {foreach $formData in $message.chat}
+														                     <tr>
+														                     	<td>{$formData.key}</td>
+														                     	<td>: {$formData.value}</td>
+														                     </tr>
+														                   {/foreach}
+														    		</table>
+														    	</td>
+														    	<td><p><span>{$message.time}</span></p></td>	
+													    	</tr>
+												    	{/if}
+												    {elseif $message.user == 'feedback'}
+												    	<tr> 
+												    		<td style="font-size:13px; color:#64696d; font-weight:bold; vertical-align: top;padding-left:9px; padding-top: 14px; padding-right: 20px;">Visitor</td>
+												    		<td class="visitor-feedback" style="width: 70%;">
+												    		 	{foreach $feedBackData in $message.chat}
+														                  {if $feedBackData.key == 'rating' and not not($feedBackData.value) }
+														                  			<p style="font-size:14px;  padding: 2px 0px 0px; margin: 0px;"><label>Ratings:</label><ul class="ratings">
+																	               {for $i in range(5)}
+																	               			{if $i <  $feedBackData.value}
+																	               			   <li class="rated hover"></li>
+																	               			{else}
+																	               				<li></li>
+																	               			{/if}
+																	               {/for}
+																	               </ul> </p>
+														                  {/if}
+														                  {if $feedBackData.key == 'feedback' and not not($feedBackData.value) }
+														                    <p style="font-size:14px;  padding: 5px 5px 0px; margin: 0px;"> <label>Feedback:</label> <span>{$feedBackData.value}</span> </p>
+														                  {/if}
+														       	{/foreach}
+												    		</td> 
+												    		<td><p><span>{$message.time}</span></p></td>
+												    	</tr>
+												    {else}	
+												    	<tr>
+															<td class="chatuser"><p>{$message.user}</p></td>
+															{if not $message.user and not $message.time}
+																<td class="chatmsg"><p><b><center>{$message.chat}</center></b></p></td>
+															{else}
+															   		<td class="chatmsg">
+																   		<p>
+																	   		{if strContains($message.chat, 'Visitor navigated to') }
+																	   			{$message.chat}
+																	   		{else}
+																	   			{$message.chat}
+																	   		{/if}
+																   		</p>
+															   		</td>
+															{/if}
+															<td><p><span>{$message.time}</span></p></td>
+														</tr>	
+													{/if}
+											{/foreach}									
+								</tbody>
+
+							</table>
+						</div>
+
+					</div>
+				</div>
+           	</div>
+           	<!-- Transcript Full Detail Chat Ends -->
+{/template}

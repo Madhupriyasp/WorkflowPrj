@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<title>Workflow</title>
+  		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" media="screen">
+	  	<link rel="stylesheet" type="text/css" href="css/style.css">
+      <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+      <link rel="stylesheet" type="text/css" href="css/font-awesome4.css">
+      
+     </head>
+ 	 <body>
+  		<div id="wrapper">
+  			<header>
+	  			<a href="#" class="logo pull-left">Workflow Management</a>
+	  			<ul class="nav nav-pills pull-left" >
+					  <li><a href="#">queue manage</a></li>
+					  <li><a href="#">tools</a></li>
+					  <li><a href="#">report</a></li>
+				  </ul><!--nav nav-pills-->
+				<ul class="nav nav-pills pull-right fetch_log">
+					<li>
+						<a href="#fetchdtl">Fetch&nbsp&nbsp&nbsp|</a>
+            <div class="popover bottom" id="fetchdtl">
+              <div class="arrow"></div>
+              <div class="popover-content">
+                <input type="text" placeholder="Fetch" class="fch_input"/>
+                <a class="btn btn-success btn-fch">Fetch</a>
+              </div>
+            </div>
+					</li>
+					<li class="sign pull-right">
+            <div class="full_dtl">
+							<img src="images/user-icon.jpg" /></div>
+              <div class="popover bottom" id="log_dtl">
+                <div class="arrow"></div>
+                <!-- <h3 class="popover-title">Popover bottom</h3> -->
+                <div class="popover-content">
+                  <div class="userimg pull-left">
+                    <img src="images/user-icon.jpg" />
+                  </div>
+                  <div class="userdtl pull-left"> 
+                    <h5>Sivaranjan.venkatachalam</h5>
+                    <span>siv@a-cti.com</span>
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="sign_foot">
+                  <a class="btn btn-default pull-right">Sign Out</a>
+                </div> 
+            </div>            
+          </li>
+				</ul>	
+  			</header><!--header-->
+
+  			<div class="tabs tab_hold">
+      				<ul class="nav nav-pills pull-left" >
+      					<li class="task active">
+                  <div class="over">
+                  <b class="tas">120</b>
+                  <span class="tas">ALL Task</span>
+                  </div>
+      						<div class="out">
+                  <b class="tas">120</b>
+      						<span class="tas">ALL Task</span>
+                  </div>
+      					</li>
+      					<li class="requed">
+                  <div class="over">
+                    <b class="req">15</b>
+                    <span class="req">requed</span>
+                  </div>
+      						<div class="out">
+                    <b class="req">15</b>
+        						<span class="req">requed</span>
+                </div>
+      					</li>
+      					<li class="progess">
+                  <div class="over">
+                  <b class="act">20</b>
+                  <span class="act">in progress</span>
+                  </div>
+      						<div class="out">
+                  <b class="act">20</b>
+      						<span class="act">in progress</span>
+                  </div>
+      					</li>
+      					<li class="scheduled">
+      						<div class="over">
+                  <b class="sche">25</b>
+      						<span class="sche">scheduled</span>
+                  </div>
+                  <div class="out">
+                  <b class="sche">25</b>
+                  <span class="sche">scheduled</span>
+                  </div>
+      					</li>
+      					<li class="stuck">
+                  <div class="over">
+      						<b class="stu">15</b>
+      						<span class="stu">stuck</span>
+                  </div>
+                  <div class="out">
+                  <b class="stu">15</b>
+                  <span class="stu">stuck</span>
+                  </div>
+      					</li>
+      					<li class="queue">
+                  <div class="over">
+      						<b class="que">25</b>
+      						<span class="que">in queue</span>
+                  </div>
+                  <div class="out">
+                  <b class="que">25</b>
+                  <span class="que">in queue</span>
+                  </div>
+      					</li>
+      					<li class="completed">
+      						<div class="over">
+                  <b class="comp">20</b>
+      						<span class="comp">completed</span>
+                  </div>
+                  <div class="out">
+                  <b class="comp">20</b>
+                  <span class="comp">completed</span>
+                  </div>
+      					</li>
+      				</ul>
+      				<div class="form-group pull-right">
+                <form class="search-con">
+                    <i class="fa fa-search"></i>
+      					   <input type="text" class="form-control" placeholder="Search by name, ID, date">
+                </form>
+      				</div><!--form-group-->
+        </div><!--tabs-->
+
+        <div class="page-icon">
+          <div class="">
+            <div class="check_opt dropdown">
+                <input type="checkbox">
+                <span class="check_drop" data-toggle="dropdown"><i class="fa fa-caret-down"></i></span>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                  <li><a href="">sadas</a></li>
+                  <li><a href="">sadas</a></li>
+                  <li><a href="">sadas</a></li>
+                  <li><a href="">sadas</a></li>
+                </ul>
+            </div>
+            <div class="pg_opt">
+                <a href=""><i class="fa fa-retweet icon-2x"></i></a>
+                <a href=""><i class="fa fa-trash-o icon-2x"></i></a>
+            </div>
+          </div>
+          <div class="order_opt">
+              <div class="sort_arrow pull-right">
+                <a href=""><i class="fa fa-chevron-left"></i></a>
+                <a href=""><i class="fa fa-chevron-right"></i></a>         
+              </div>
+              <div class="sort_no pull-right">
+                <span>1 - 20 </span> of <span> 20 </span>
+              </div>
+                
+          </div>
+          
+        </div><!--page-icon-->
+
+        <div class="account-details">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th></th>
+                <th class="acc_wd">Account ID</th>
+                <th class="aglogin_wd">Agent Login</th>
+                <th class="status_wd">Status</th>
+                <th class="dateadd_wd">Date Added</th>
+                <th class="datecom_wd">Date Completed</th>
+                <th class="anstime_wd">Answer Time</th>
+                <th class="timespt_wd">Time Spent</th>
+              </tr>
+            </thead>
+          </table>
+
+            <div class="table_scroll">
+            <table class="table table-hover">  
+            <tbody>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td class="acc_wd">166792424</td>
+                <td class="aglogin_wd">suzanne.glossop@a-cti.com</td>
+                <td class="status_wd"><span class="label btn-completed">Completed</span></td>
+                <td class="dateadd_wd">Nov 25 2013&nbsp;<span>10:11 AM PDT</span></td>
+                <td class="datecom_wd">Nov 25 2013&nbsp;<span>10:11 AM PDT</span> </td>
+                <td class="anstime_wd">01:42:05</td>
+                <td class="timespt_wd">00:14:30</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td class="acc_wd">166792424</td>
+                <td class="aglogin_wd">suzanne.glossop@a-cti.com</td>
+                <td class="status_wd"><span class="label btn-scheduled">Scheduled</button></td>
+                <td class="dateadd_wd">Nov 25 2013&nbsp;<span>10:11 AM PDT</span></td>
+                <td class="datecom_wd">Nov 25 2013&nbsp;<span>10:11 AM PDT</span></td>
+                <td class="anstime_wd">01:42:05</td>
+                <td class="timespt_wd">00:14:30</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td class="acc_wd">166792424</td>
+                <td class="aglogin_wd">suzanne.glossop@a-cti.com</td>
+                <td class="status_wd"><span class="label btn-requed">Requed</button></td>
+                <td class="dateadd_wd">Nov 25 2013&nbsp;<span>10:11 AM PDT</span></td>
+                <td class="datecom_wd">Nov 25 2013&nbsp;<span>10:11 AM PDT</span></td>
+                <td class="anstime_wd">01:42:05</td>
+                <td class="timespt_wd">00:14:30</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td class="acc_wd">166792424</td>
+                <td class="aglogin_wd">suzanne.glossop@a-cti.com</td>
+                <td class="status_wd"><span class="label btn-progress">Progress</button></td>
+                <td class="dateadd_wd">Nov 25 2013&nbsp;<span>10:11 AM PDT</span></td>
+                <td class="datecom_wd">Nov 25 2013&nbsp;<span>10:11 AM PDT</span></td>
+                <td class="anstime_wd">01:42:05</td>
+                <td class="timespt_wd">00:14:30</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td class="acc_wd">166792424</td>
+                <td class="aglogin_wd">suzanne.glossop@a-cti.com</td>
+                <td class="status_wd"><span class="label btn-stuck">Stuck</button></td>
+                <td class="dateadd_wd">Nov 25 2013&nbsp;<span>10:11 AM PDT</span></td>
+                <td class="datecom_wd">Nov 25 2013&nbsp;<span>10:11 AM PDT</span></td>
+                <td class="anstime_wd">01:42:05</td>
+                <td class="timespt_wd">00:14:30</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td class="acc_wd">166792424</td>
+                <td class="aglogin_wd">suzanne.glossop@a-cti.com</td>
+                <td class="status_wd"><span class="label btn-queue">Queue</button></td>
+                <td class="dateadd_wd">Nov 25 2013&nbsp;<span>10:11 AM PDT</span></td>
+                <td class="datecom_wd">Nov 25 2013&nbsp;<span>10:11 AM PDT</span></td>
+                <td class="anstime_wd">01:42:05</td>
+                <td class="timespt_wd">00:14:30</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td class="acc_wd">166792424</td>
+                <td class="aglogin_wd">suzanne.glossop@a-cti.com</td>
+                <td class="status_wd"><span class="label btn-task">All Task</button></td>
+                <td class="dateadd_wd">Nov 25 2013&nbsp;<span>10:11 AM PDT</span></td>
+                <td class="datecom_wd">Nov 25 2013&nbsp;<span>10:11 AM PDT</span></td>
+                <td class="anstime_wd">01:42:05</td>
+                <td class="timespt_wd">00:14:30</td>
+              </tr>
+            </tbody>
+          </div>
+          </table>
+        </div><!--account-details-->
+      </div><!--wrapper-->
+      
+        <div class="modal fade in" id="detail_listing">
+  <div class="modal-dialog" style="width: 965px;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        
+              <div class="page-icon">
+          <div class="">
+            
+            <div class="pg_opt">
+                <a href=""><i class="fa fa-retweet" data-toggle="tooltip" title="Reschedule"></i></a>
+                <a href=""><i class="fa fa-trash-o" data-toggle="tooltip" title="Delete"></i></a>
+            </div>
+          </div>
+
+          <div class="order_opt">
+              <div class="sort_arrow pull-right">
+                <a href=""><i class="fa fa-chevron-left"></i></a>
+                <a href=""><i class="fa fa-chevron-right"></i></a>         
+              </div>
+            <div class="pgshow_opt pull-right">
+                <a href="#status_dtl"><i class="fa fa-envelope" data-toggle="tooltip" title="Mail View"></i></a>
+                <a href="#status" class="active"><i class="fa fa-table" data-toggle="tooltip" title="Table View"></i></a>
+            </div>
+                
+          </div>
+        </div><!--page-icon-->
+        <div class="clearfix"></div>
+
+          <div class="accounts">
+            <table class="table pull-left">
+              <tr>
+                <td class="title">Account ID:</td>
+                <td class="text">1666792424</td>
+              </tr>
+              <tr>
+                <td class="title">Agent Login:</td>
+                <td class="text">suzanne.glossop@a-cti.com</td>
+              </tr>
+              <tr>
+                <td class="title">Status:</td>
+                <td class="text">Completed</td>
+              </tr>
+            </table>
+            <div class="details">
+                <table class="table pull-left">
+                  <tr>
+                    <td class="title">Date Added:</td>
+                    <td class="text">Nov 25 2013 <span>10:11 AM PDT</span></td>
+                  </tr>
+                  <tr>
+                    <td class="title">Date Completed:</td>
+                    <td class="text">Nov 25 2013 <span>10:11 AM PDT</span></td>
+                  </tr>
+                  <tr>
+                    <td class="title">Answer TIme:</td>
+                    <td class="text">01:42:05</td>
+                  </tr>
+                  <tr>
+                    <td class="title">Time Spent</td>
+                    <td class="text">00:14:30</td>
+                  </tr>
+                </table>
+            </div>
+          </div>
+
+          <div class="status" id="status">
+             <table class="table table-hover tablesorter" id="myTable">
+                <thead>
+                  <tr>
+                    <th class="dt_wd">Dates and TIme</th>
+                    <th class="conid_wd">Connection ID</th>
+                    <th class="sat_wd">Status</th>
+                    <th class="agentlog_wd">Agent Login</th>
+                    <th class="due_wd">Duration</th>
+                  </tr>
+                </thead>
+              </table>
+              <div class="dtl_scroll">
+              <table class="table table-hover">
+                <tbody>
+                    <tr >
+                    <td class="dt_wd">Dates and TIme</td>
+                    <td class="conid_wd">Connection ID</td>
+                    <td class="sat_wd">Status</td>
+                    <td class="agentlog_wd">Agent Login</td>
+                    <td class="due_wd">Duration</td>
+                  </tr>
+                  <tr>
+                    <td>Dates and TIme</td>
+                    <td>Connection ID</td>
+                    <td>Status</td>
+                    <td>Agent Login</td>
+                    <td>Duration</td>
+                  </tr>
+                </tbody>
+             </table>
+           </div>
+           </div>
+           <div class="status_dtl" id="status_dtl" style="display:none;">
+            <table bgcolor="#ffffff" cellpadding="0" cellspacing="0">
+      <tr height="41px" style="display:block; border-bottom:#cccccc 1px solid;">
+          <td>
+              <h2 style="padding:0px; margin:0px; font-size:23px;s">Full creative</h2>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style=" border-bottom:#cccccc 1px solid;">
+                  <tr>
+                    <td width="78" style="padding:10px 0;"><img src="images/user-icon.jpg" style="width: 73px;height: 73px;"/></td>
+                    <td width="510" style=" padding-left:10px;">
+                      <h3 style="text-transform:uppercase; font-size:14px; margin-top:0; margin-bottom:7px; margin-top:7px;">Kevin Granger</h3>
+                        <span style="font-size:14px; color:#999999;"> Call from (503) 123-1234 to 800-234-2345</span>
+                    </td>
+                  </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+          <td>
+              <table width="600" style="margin-top:11px;" cellpadding="0" cellspacing="0" border="0">
+                  <tr>
+                    <td width="73" style="font-size:13px; color:#b9b9b9; font-weight:bold; padding-left:18px; padding-top: 14px; ">9:15 PM</td>
+                    <td width="515"><p style="font-size:14px; padding: 14px 0px 0px; margin: 0px;"><strong>Jenny P.Answered</strong></p></td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td><p style="font-size:14px;  padding: 14px 0px 0px; margin: 0px;"><strong>Call Type:</strong> Sales Call</p></td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td><p style="font-size:14px; line-height:20px;  padding: 14px 0px 0px; margin: 0px;"><strong>Message : </strong> There isn't currently a way to customize the button without digging into the code and hacking it, but it can be done. With that done, when the page loads, everything will work as before, except you'd use your own image instead of ours. The downside to this solution is that if we update the loop-embed-code.js, you won't see the changes. Moreover, this would not be officially supported due to the overhead of not being synced up with our server. Of course, the most stable solution is to use the default Feedback and Support button</p></td>
+                  </tr>
+                  <tr>
+                    <td style="font-size:13px; color:#b9b9b9; font-weight:bold; padding-left:18px; padding-top: 14px;">9:17 PM</td>
+                    <td><p style="font-size:14px; padding: 14px 0px 0px; margin: 0px;"><strong>Call patched to (360)234-2345</strong></p></td>
+                  </tr>
+                  <tr>
+                    <td style="font-size:13px; color:#b9b9b9; font-weight:bold; padding-left:18px;padding-top: 14px; ">9:25 PM</td>
+                    <td><p style="font-size:14px;  padding: 14px 0px 0px; margin: 0px;"><strong>Jenny P.visited <a style="color:#000000; border-bottom:#7f7f7f 2px solid; text-decoration:none;" href="#">www.solestruck.com</a></strong></p></td>
+                  </tr>
+                  <tr>
+                    <td style="font-size:13px; color:#b9b9b9; font-weight:bold; padding-left:18px; padding-top: 14px; ">9:28 PM</td>
+                    <td><p style="font-size:14px;  padding: 14px 0px 0px; margin: 0px;"><strong>Call completed</strong></p></td>
+                  </tr>
+                </table>
+            </td>
+        </tr>
+        <tr style="border-top:#ccc 1px solid; display:block; margin-top:13px; padding-top:13px;">
+            <td>
+                <table width="600px" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td width="458"><p style="font-size:12px;">Delivered by <a href="#" style="color:#1193d6; text-decoration:none;">AnswerConnect</a></p></td>
+                        <td width="140"><p style="font-size:12px; float:left;">How we do? </p><a href="#" style="margin-left:5px;"><img style="margin-top: -6px;width: 28px;" src="images/thumb-up.png" /></a><a href="#" style="margin-left:5px;"><img style="margin-top: -6px;width: 28px;" src="images/thumb-down.png" /></a></td>
+                    </tr>
+                </table>
+            </td>     
+        </tr>
+    </table>
+           </div>
+      </div>
+      
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="js/action.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    </body>
+  </html>

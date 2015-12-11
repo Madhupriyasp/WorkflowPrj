@@ -1,0 +1,891 @@
+@charset "utf-8";
+/* CSS Document */
+
+.edit_mode .custom_task
+{
+    background-position: 0 -284px;
+}
+.edit_mode span {
+    background: url("../images/icons.png") no-repeat scroll 0 0 transparent;
+    color: #555555;
+    cursor: pointer;
+    float: right;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 6px 15px 0;
+}
+#voice-box {
+  position: fixed;
+  margin: 0 auto;
+/*  width: 100%; */
+  top: 0;
+  z-index:999999;
+  text-align: center;
+  left : 45%;
+  display:none;
+}
+
+#voice-box span { /* edit */
+ background:#fffed5;
+ font-size: 12px;
+ color: #000;
+ font-weight: bold;
+/* padding: 10px 12px 6px 12px;	*/
+ padding: 10px 12px 3px 12px;	/* Changes by Venkey */
+
+ line-height: 26px;
+ border: solid 1px #cfcd59;
+ border-radius:0px 0px 5px 5px
+ 
+ /*
+ -webkit-box-shadow: 2px 2px rgba(0,0,0,0.15);
+ box-shadow: 2px 2px rgba(0,0,0,0.15);
+ -moz-box-shadow: 2px 2px rgba(0,0,0,0.15);
+ */
+}
+/* adding style for signup link in login page */
+.signup { 
+	color: #D6D3D3;
+text-decoration: none;
+height: 24px;
+line-height: 40px;
+padding: 0 2px 5px;
+font-size: 10px;
+float: right;
+position: relative;
+top: 66px;
+left: -30px;
+}
+.signuptext
+{
+ position: absolute;
+ margin-left: 40%;
+ margin-top: -105px;
+}
+:focus
+{
+	outline: 0;
+}
+************* Settings dropdown from setmore **************
+.account_hdr
+{
+    background: none repeat scroll 0 0 #333333;
+    position: absolute; z-index:5000;
+    right: 0;
+    text-align: right;
+    top: 0;
+    width: 40%;
+}
+
+.account_hdr ul {
+ /*   margin-left: -288px; */
+   /* width: 600px;
+   margin-right: -90px; */
+}
+
+.account_hdr ul li 
+{
+    color	: #DDDDDD;
+    padding	: 6px ;
+   /* width	: 115px;*/
+}
+
+.account_hdr ul li#account_menu:hover
+{
+	background-color:#4b5455;
+}
+
+/* #login_details ul li#account_menu:hover ul { display:block; }
+ */
+.account_hdr ul li a {
+     color: #FFFFFF; 
+    /*color: #000000;*/
+    text-decoration: none;
+}
+
+.account_hdr ul li ul {	
+	 -moz-border-radius:0px 0px 6px 6px;
+	 -webkit-border-radius:0px 0px 6px 6px;
+	 border-radius:0px 0px 6px 6px;
+	 
+	border:1px solid #A0A0A0;
+	-moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);	
+}
+
+
+/* #login_details ul li#account_menu:hover ul {
+	display: block;
+} */
+
+.account_hdr ul li ul {
+    background: none repeat scroll 0 0 #F4F4F4;
+    border-color: -moz-use-text-color #555555 #555555;
+    border-right: 1px solid #555555;
+    border-style: none solid solid;
+    border-width: medium 1px 1px;
+    display: none;
+    margin-top: 0;
+    padding: 0 0 10px;
+    position: absolute;
+    right: -40px;
+    width: 200px;
+    z-index: 2000;
+    top: 40px;
+}
+
+.account_hdr ul li ul li {
+    border-bottom: 1px dotted #CCCCCC;
+    display: block;
+    line-height: 12px;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    text-shadow: none;
+    width: 100%;
+}
+
+.account_hdr ul li ul li#my_details a {
+    background: url("../images/account-icons.png") no-repeat scroll 15px 11px transparent;
+}
+
+.account_hdr ul li ul li#tab_id_brandingSetting a {
+   background: url("../images/account-icons.png") no-repeat scroll 15px -43px transparent;
+}
+
+.account_hdr ul li ul li#admin_panel a {
+    background: url("../images/account-icons.png") no-repeat scroll 15px -43px transparent;
+}
+
+.account_hdr ul li ul li#fetch_account_popup a {
+    background: url("../images/account-icons.png") no-repeat scroll 15px -43px transparent;
+}
+.account_hdr ul li ul li#account_details a {
+    background: url("../images/account-icons.png") no-repeat scroll 15px -43px transparent;
+}
+.account_hdr ul li ul li#sign_out a {
+    background: url("../images/account-icons.png") no-repeat scroll 15px -100px transparent;
+    border-bottom-color: #FFFFFF;
+}
+
+..account_hdr ul li ul li#operatorConsole a
+{
+   background: url("../images/account-icons.png") no-repeat scroll 15px -43px transparent;
+}
+
+/* #login_details ul li ul li#view_demo a
+{
+   background: url("../images/account-icons.png") no-repeat scroll 15px -43px transparent;
+}
+ */
+.account_hdr ul li ul li a
+{
+    color: #555555;
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    margin: 0;
+    padding: 10px 15px 10px 50px;
+}
+	
+.account_hdr ul li ul li a span {
+    color: #999999 !important;
+    display: block;
+    padding: 0;
+}
+.account_hdr ul li ul li a:hover {
+    background-color: #EEEEEE !important;
+    color: #000000;
+}
+
+
+body {
+	line-height: 1;
+	/* color: black;
+	background: white; */
+}
+
+.min_screens {
+	/* width:424px; */
+/* 	background:#FAFAFA; */ /*Changes by cs team*/
+	/*background:#fff; Changes by cs team*/
+	margin:0px auto;
+	/* padding:30px 40px; */
+	 padding: 0px 0px;
+}
+
+/* styles for branding */
+.settings_account .filebrowse_btn{
+    float: left;
+    position: relative;
+    height: 26px;
+	margin:0 0 0 4px;
+}
+.settings_account h3 {
+	color: #000000;
+	font-size: 20px;
+	 padding: 11px 0 15px;
+}
+
+
+/******************* Settings Accounts ****************/
+.accounts_details{ 
+	padding: 6px 0 0 0;
+	border-top: 1px solid #999;
+	width:100%;
+	/* height:600px !important; */
+}
+.accounts_details label { 
+	float: left;
+	width: 24.5%;
+	font-weight: bold;
+	font-size: 13px;
+	color: #000;
+}
+.accounts_details label.apprnce { 
+	margin:3px 0 0 0;
+}
+.accounts_details label.tme_zone{ 
+	margin:6px 0 0 0;
+}
+.accounts_details label.acc_name {
+	padding:12px 0 0 0;
+}
+.contact_detail{
+	border-bottom: 1px solid #ccc;
+    padding: 0 0 17px 0;
+}
+.gacode_detail 
+{
+	border-bottom: 1px solid #ccc;
+    padding: 16px 0;
+}
+.logo{
+	border-bottom: 1px solid #ccc;
+	display: block;
+    padding: 16px 0;
+} 
+.appearance {
+	border-bottom: 1px solid #ccc;
+	padding:15px 0 6px 0;
+}
+/* .time_zone{border:none !important;
+	padding:15px 0px;
+} */
+.accounts_details ul li ul {
+	float: left;
+	border-bottom: none !important;
+	padding: 0px;
+}
+.accounts_details .contact_detail input{
+    background: none repeat scroll 0 0 transparent;
+    border: 1px solid #DFDFDF;
+    color: #B9B9B9;
+    font-family: Helvetica,'Open Sans';
+    font-size: 14px;
+    margin: 5px 2px 6px;
+    padding: 0px 6px;
+	height:24px;
+}
+.gacode_detail input
+{
+    background: none repeat scroll 0 0 transparent;
+    border: 1px solid #DFDFDF;
+    color: #B9B9B9;
+    font-family: Helvetica,'Open Sans';
+    font-size: 14px;
+    /* margin: 5px 2px 6px; */
+    margin: 0 6px 6px;
+    padding: 0px 6px;
+	height:24px;
+}
+.accounts_details .contact_detail input:hover  , .gacode_detail input:hover{
+	border: 1px solid #ccc;
+}
+.accounts_details .contact_detail input:focus  , .gacode_detail input:focus{
+	border: 1px solid #1490E7;
+	box-shadow: 0 0 3px #1490E7;
+}
+.accounts_details .contact_detail p{
+	font-size: 11px !important;
+ 	margin:0 0 0 2px;
+   	color: #999;
+	float:left;
+}
+.accounts_details span.accname{
+	float: left;
+	width: 24.5%;
+	font-weight: bold;
+	font-size: 13px;
+	color: #000;
+}
+.accounts_details span.business{
+	float:left; 
+	color:#999;
+	font-size: 11px !important;
+	font-weight:normal !important;
+	padding:10px 0 0 0 !important;
+}
+.accounts_details input.input_busname{
+	width: 319px;
+	padding:6px 0 0 0;
+}
+.accounts_details input.input_M	{ width: 319px;  }
+
+.theames { 
+    float: left;
+    padding: 0 0 11px 4px;
+}	
+.theames ul { width: 330px; }
+.theames ul li {
+	float: left;
+	width: 150px;
+	margin: 5px 15px 5px 0px;
+	text-indent: -5px;
+	display: block;
+	 background: url(../images/settings_app_colors.png) no-repeat 0px 0px;
+	height: 29px;
+}
+.theames ul li input{
+	margin: 0px 0px 0px 0px;
+	float:left;
+}
+.theames ul li span{
+	margin: 5px 0px 0px 0px;
+}
+.theames ul label {
+	line-height:29px;
+	width:136px;
+	text-indent:-999px;
+	cursor:pointer;
+}
+.theames li.a_white{ background-position: 0px 0px; }
+.theames li.a_red{ background-position: 0px -39px; }
+.theames li.a_gray{ background-position: 0px -78px; }
+.theames li.a_green{ background-position: 0px -119px; }
+.theames li.a_blue{ background-position: 0px -156px; }
+.theames li.a_yellow{ background-position: 0px -195px; }
+.theames li.a_pink{ background-position: 0px -234px; }
+.theames li.a_brown{ background-position: 0px -273px; }
+.theames li.a_custom 	{
+	background: none !important;
+	text-indent: 0px !important;
+	margin: 0px 0px 5px 0px !important;
+	padding: 0px;
+	line-height: 28px;
+	font-weight: bold;
+}
+.theames li.a_custom label{ text-indent: 0px !important;}
+.theames li.a_custom code.custome_color_pointer {
+	background: url(../images/settings_custom_icon.png) no-repeat 0px 0px;
+	width: 30px;
+	height: 29px;
+	margin: 0px 4px 0px 4px;
+	cursor: pointer;
+	float: left;
+}
+.color_picker_tool2 {
+	margin: 30px 0px 0px 0px;
+	display: none;
+}
+
+.color_picker_tool2 .colorpicker .colorpicker_locator{
+	background : none !important;
+}
+
+/*settings page css*/
+.result input.editable { display: none;}
+
+#rulesTable input.showedit1 { display: none;}
+#rulesTable input.showedit2 { display: none;}
+
+.checkbox {
+	padding-top: 100px 0px 0px 0px;
+	border-spacing:5em; 
+	/* padding-top: 30px; */
+}
+.useoffline , .embeddedstyle
+{
+	padding-top: 20px;
+}
+#textboxs
+{
+	padding: 16px 1px 1px 2px; 
+}
+/* .precahtsurvey
+{
+	padding-top: 30px;
+} */
+.inputalign
+{
+	width: 204px ; 
+}
+.response
+{
+	color:red;
+	font-weight: bold;
+}
+/* .hideable{
+	display:none;
+} */
+
+
+/*
+#agentslist , .agent_info_wrapper
+{
+	min-height	:	190px;
+}
+
+
+#chatIconImage
+{
+	position: absolute;
+	right	: 34%;
+	top		: 20%
+}
+*/
+
+#answerPhraseWindowContent
+{
+	min-height: 20px;
+}
+
+#chat_header_colorSelector
+{
+	min-height: 72px;
+}
+
+/* The following is for the start chat button */
+
+.startchat_btn 
+{
+	position:fixed;
+	bottom:50%;
+	right:-62px;
+	z-index:9999;
+	padding:0px 0px 0px 13px;
+	/* background:url(../images/redesign/feedback_bg.png) repeat-x 0px 0px; */
+	
+	line-height:32px;
+	cursor:pointer;
+	
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	
+	-webkit-transform	: rotate(270deg);  /* Saf3.1+, Chrome */
+	-moz-transform		: rotate(270deg);  /* FF3.5+ */
+	-ms-transform		: rotate(270deg);  /* IE9 */
+	-o-transform		: rotate(270deg);  /* Opera 10.5 */
+	transform			: rotate(270deg);
+      
+    /* filter				: progid:DXImageTransform.Microsoft.Matrix(IE6–IE9
+	M11=-1.836909530733566e-16, M12=1, M21=-1, M22=-1.836909530733566e-16, sizingMethod='auto expand'); */
+	               
+   	/* filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=3); */
+	zoom				: 1;
+    background-color: #290029;
+	/*
+	-webkit-transform	:rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	-o-transform: rotate(270deg);   
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+	*/
+	
+}
+.startchat_btn span
+{
+	padding:2px 15px 0px 23px;
+	color:#ffffff;
+	background:url(../images/redesign/feedback_icon.png) no-repeat 0px 2px;
+	/*font-weight:bold;*/
+	cursor:pointer;
+	
+}
+img.center
+ { 
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+
+.min_screens h3.profile
+{
+   /*  border-bottom: 1px solid #999999; */
+    margin-bottom: 12px;
+    padding-bottom: 15px;
+    font-weight: inherit;
+    margin-top: 35px;
+    padding-left: 10px
+}
+.min_screens h3
+{
+    color: #000000;
+    font-size: 19px;
+    padding: 15px 0 15px;
+}
+.min_screens h4
+{
+   	display: inline;
+    color: #000000;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 22px;
+    padding: 48px 12px 12px 0;
+    width: 200px;
+}
+.bordersettings 
+{
+	border-bottom: 1px solid #999999;
+	 padding: 9px 0;
+}
+#rulesTable
+{
+ 	border-collapse: separate;
+    border-spacing: 0;
+   	width:100%;
+    margin-bottom:20px;
+}
+
+#rulesTable tr td
+{
+    height: 40px;
+    border-bottom: 1px solid #999999;
+    width:45%;
+}
+#rulesTable tr:hover , .result:hover
+{
+	 background: none repeat scroll 0 0 #F3F3F3;
+}
+.result
+{
+	  border-bottom: 1px solid #999999;
+	
+}
+.result tr td
+{
+	width:45%;
+}
+#settingsbody
+{
+	padding:0px !important;
+}
+
+.button_holder_google
+{
+	clear:both;
+	margin:5px;
+}
+
+.button_holder_facebook
+{
+	clear:both;
+	margin:10px;
+}
+.googleAccount
+{
+	padding:8px 14px;
+}
+
+bubble 
+{
+	font:"Helvetica",verdana,arial,sans-serif;
+	font-size: 12px;
+}
+.headerWrapper   
+{ 
+	background: #eaf6fe; 
+}
+
+.agent .headerWrapper  
+{ 
+	background: #f3f3f3;
+}
+.timestamp 
+{
+ overflow: hidden;
+ float: right;
+ width: 70px;
+}
+.name
+{
+    float: left;
+    font-weight: bold;
+    width: 65%;
+}
+.message 
+{
+    clear: both;
+    line-height: 18px;
+    padding-right: 14px;
+}
+.facebookAccount
+{
+ 	left: 550px;
+    position: absolute;
+    top: 483px;
+}
+
+#login_with_google_account {
+/* 	background: url("http://commondatastorage.googleapis.com/conversionsupportimages/cswebsiteimages/google.png") no-repeat scroll 0 0 transparent;  */
+/*     border: medium none; */
+/*     float: left; */
+/*     height: 40px; */
+/*     width: 104px; */
+    cursor: pointer;
+}
+
+#login_with_facebook_account {
+/*     background: url("http://commondatastorage.googleapis.com/conversionsupportimages/cswebsiteimages/facebook.gif") no-repeat scroll 0 0 transparent; */
+/*     border: medium none; */
+    cursor: pointer;
+/*     float: left; */
+/* /*     height: 47px; */ 
+/* /*     width: 111px; */
+position: relative;
+left	: -100px
+}
+
+#login_thirdParty_authentication {
+margin-top : 10px;
+margin-left: 0px;
+}
+
+
+
+.global_btn_ctt
+{
+position: relative;
+width: 195px !important;
+height: 30px;
+float: left !important;
+font-weight: normal;
+-moz-border-radius: 4px !important;
+-webkit-border-radius: 4px !important;
+border-radius: 4px !important;
+background: #F1F1F1 url(../images/butt_bg.png) repeat-x left bottom;
+}
+
+
+
+.global_btn_ctt
+{
+position: relative;
+width: 195px !important;
+height: 30px;
+float: left !important;
+font-weight: normal;
+-moz-border-radius: 4px !important;
+-webkit-border-radius: 4px !important;
+border-radius: 4px !important;
+background: #F1F1F1 url(../images/butt_bg.png) repeat-x left bottom;
+}
+
+.divTable
+    {
+        display:  table;
+        width:100%;
+        border:1px solid  #cccccc;
+        border-spacing:10px;/*cellspacing:poor IE support for  this*/
+       /* border-collapse:separate;*/
+    }
+
+    .divRow
+    {
+       display:table-row;
+       width:auto;
+
+    }
+
+    .divCell
+    {
+        float:left;/*fix for  buggy browsers*/
+        display:table-column;
+        width:33%;
+    }
+	
+	.headRow .divCell
+    {
+			font-weight: bold;  
+			float	:	left;      
+    }
+    
+.manageteam_content li input{
+	border:none;
+	background: none;
+	font-size: 12px; 	
+	font-weight: normal;
+	line-height: 25px;
+	padding: 6px;
+	color: #555;
+}
+
+.manageteam_content  li  input:hover {
+	/* padding: 2px 5px 2px 3px;*/
+	border-bottom:1px solid #CDCDCD; 
+	line-height:25px;
+		padding: 6px;
+	/* cursor:move; */
+}
+
+.manageteam_content  li input:focus {
+	border: 1px solid #1490E7;
+	box-shadow: 0 0 3px #1490E7;
+/* 	padding: 2px 5px 2px 3px;
+ */	background: #fff;
+	line-height:25px;
+}
+
+.manageteam_content li:hover 
+{
+	background: #f4f4f4;
+	line-height: 25px;
+}
+.profile{
+	padding:3px;
+}
+.LIDesign{
+		background-color: white;
+		position: relative;
+		width:auto;
+		text-align: left;
+		list-style: none;
+		position: relative;
+		border: 1px solid gray;
+		right: 0px;left: 0px;
+		width:855px;
+	}
+.cssDropDownList ul li:hover{
+		background-color: blue;
+		color: white;
+		cursor: pointer;
+		width:855px;
+	}
+	
+	
+/** mobile **/
+
+
+#mobile {
+	width:96%;
+	margin:0px auto;
+}
+#mobile h1 {
+    color: #000000;
+    font-size: 18px;
+    margin-bottom: 6px;
+    padding:24px 0px 0px 0px;
+    font-weight:bold;
+}	
+#mobile .mobile_content_holder {
+	min-width:998px;
+	border:1px solid #979797;	border-width:1px 0px;
+	background:#e6e6e6;
+}
+#mobile .mobile_content_holder .col1 {
+	width: 455px;
+	height:519px; 
+	padding:15px 20px 0px 25px;
+	float:left;
+	border-right:1px solid #cccccc;
+	background:#fff;
+}
+#mobile .mobile_content_holder .col1 .logo {
+	width:140px; 
+	height:115px;
+	padding:0px 0px 20px;
+	float:left;
+	background:url(/images/images_mobile/CSStyle.png) 10px no-repeat;
+	border-bottom:0px !important;
+}
+#mobile .mobile_content_holder .col1 h3 {
+	font-size:20px; 
+	color:#000;
+	padding: 155px 64px 0 25px;
+	line-height:24px;
+}
+#mobile .mobile_content_holder .col1 p {
+	font-size:15px;
+	line-height:24px;
+	color:#353535;
+	padding: 0px 0px 10px 28px;
+	width: 365px;
+}
+#mobile .mobile_content_holder .col2 {
+	width:383px;height:510px; padding:24px 25px 0px;
+	float:left;	position:relative;
+	background:#e6e6e6;
+	border-right:1px solid #cccccc;
+}
+#mobile .mobile_content_holder .col2 .apple {
+	width:49px; height:61px;
+	margin:0px auto 25px;
+	
+	background:url(../images/images_mobile/apple.png) no-repeat;
+}
+#mobile .mobile_content_holder .col2 h3, #mobile .mobile_content_holder .col3 h3 {
+	font-size:14px; font-weight:bold;
+	color:#000; text-align:center;
+	padding:0px 0px 13px;
+	border-bottom:1px solid #d6d6d6;
+}
+#mobile .mobile_content_holder .col2 .app_store, #mobile .mobile_content_holder .col3 .google_play {
+	width:121px; 
+	height:40px;
+	position:absolute;
+	bottom:70px;
+	left:82px;
+	background:url(../images/images_mobile/app_store.png) no-repeat;
+}
+#mobile .mobile_content_holder .mobapp_features {
+	margin:0px; padding:14px 0px 17px 35px;
+}
+#mobile .mobile_content_holder li {
+	line-height:20px;	padding:0px 0px 20px 7px;
+	color:#333333;
+	font-size:12px;
+	background:url(../images/images_mobile/bullet_img.png) no-repeat left 10px;
+	width:350px;
+}	
+#mobile .mobile_content_holder .col3 {
+	width:273px; height:510px;
+	padding:24px 25px 0px;
+	float:left;	position:relative;
+	background:#e6e6e6;
+}
+#mobile .mobile_content_holder .col3 .and_st {
+	width:54px; height:63px;
+	margin:0px auto 23px;
+	background:url(../images/images_mobile/andoid_market.png) no-repeat;
+}
+#mobile .mobile_content_holder .col3 .google_play { background:url(../images/images_mobile/google_play.png) no-repeat; }
+
+.account_hdr ul li{
+	display : inline;
+}
+
+.account_hdr ul{
+	margin: 0;
+padding: 0;
+	list-style-type: none;
+}
+
+.account_hdr{
+	float: right;
+margin-top: -26px;
+
+}
+
+#account_id
+{
+	margin-right:149px;
+}
+
+/* #signup_count
+{
+font-size: 11px;
+font-weight: bold;
+color: white;
+text-decoration: none;
+} */

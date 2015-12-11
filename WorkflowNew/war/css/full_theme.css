@@ -1,0 +1,43 @@
+body
+{
+	background:#fff;
+}
+
+.tool_nav 
+{
+	border-bottom:none;
+}
+.login_backImage
+{
+/* 	background-image: url(http://commondatastorage.googleapis.com/conversionsupportimages/website/images/base/basenew.jpg);	 */
+background-image: url("../images/new_background.jpg");
+}
+
+.header_holder
+{	
+	/* background-color: #3d93cc; */
+	height : 44px;
+	border-bottom: 1px solid #989898 ;
+}
+
+.header_holder img
+{
+	display: none;
+}
+
+.tab_nav_holder ul li.selected
+{
+	background: #F2F2F2; /*Changes by cs team*/
+	border : solid 1px #777; /*Changes by cs team*/
+	border-bottom : solid 0px #777; /*Changes by cs team*/
+}
+.tab_nav_holder ul li.selected a{ color:#000; }
+
+.tool_nav ul li a.selected span
+{ 
+	display:block; 
+	margin:0px auto; 
+	height:7px; 
+	width:12px; 
+}
+

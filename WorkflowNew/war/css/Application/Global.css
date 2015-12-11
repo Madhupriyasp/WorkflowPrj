@@ -1,0 +1,152 @@
+/* global.css */
+
+#message-window {
+  
+}
+
+.embossed-heavy {
+    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 
+        inset 0 2px 3px rgba(255,255,255,0.3), 
+        inset 0 -2px 3px rgba(0,0,0,0.3),
+        0 1px 1px rgba(255,255,255,0.9);
+}
+
+
+.display-inline {
+  display: inline;
+}
+
+.shadow {
+  background: url('../../img/shadow.png') no-repeat 2px 0px;
+  height: 40px;
+  margin-bottom: -50px;
+  z-index: 10;
+  position: relative;
+}
+
+.animation{
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.zero-padding {
+	
+	padding:0px 0px 0px 0px;
+
+}
+
+.img-center {
+   width: 300px;
+   height: 300px;
+   position: absolute;
+   left: 50%;
+   top: 50%; 
+   margin-left: -150px;
+   margin-top: -150px;
+}
+
+.text-dot {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.no-text-decoration:hover {
+
+   text-decoration: none;
+
+}
+
+.jquery-ui-drop-down span {
+  display: inline-block;
+}
+
+ .jquery-ui-drop-down-menu {
+   
+ }
+
+ .color-grey {
+  color: #B1B1B1;
+}
+
+.centered{
+    margin: 0 auto;
+}
+
+.absolute-center {
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+abbr.abbr-no-underline {
+  border-width:0px;
+  cursor: default;
+}
+
+abbr.context-menu-cursor {
+  cursor: default;
+  cursor: context-menu;
+}
+
+.vertical-divider {
+  border-left: 1px solid #7A7A7A;
+  height: 20px;
+  width: 2px;
+}  
+
+.give-border {
+  border: 2px solid #FF0000;
+}
+
+/* Textbox with icon - Right */
+.right-inner-addon {
+    position: relative;
+}
+.right-inner-addon input {
+    border-radius: 0px;
+	background-color: #ffffff;
+	padding: 0px 5px 0px 27px;
+	font-weight: 300;
+	height: 28px;
+}
+.right-inner-addon i {
+    position: absolute;
+  	left: 0px;
+  	padding: 7px 7px;
+  	pointer-events: none;
+}
+/* Textbox with icon - Right */
+
+ .blink-me {
+    animation-name: blinker;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    -webkit-animation-name: blinker;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+}
+
+@-moz-keyframes blinker {  /* Decimal not necessary, 0 and 1 is enough */
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
