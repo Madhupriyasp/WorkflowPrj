@@ -489,9 +489,10 @@ $('#fetch').click(function(){
 			        return date.valueOf() < now.valueOf() ? 'disabled' : '';
 			    }	    	
 	    }).on('changeDate', function(ev){
-	    	reschedule_date('hide');
+	    	reschedule_date.datepicker('hide');
 	    }).datepicker("setValue", new Date());
 		/*Updated by Priya**********Ends here*/
+	
 		
 		var utc =  moment.utc(new Date());
 		var date = new Date().getTime();
