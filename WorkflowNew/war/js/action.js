@@ -480,15 +480,18 @@ $('#fetch').click(function(){
 		$('#reschedule_pop').toggle();
 		$('.popover').css('z-index','900');
 		$('#rescpop').css('height','250px');
-		$('#reschedule_date').datepicker("setValue", new Date());
-		
-		var reschedule_date = $('#reschedule_date')
-	    .datepicker({
-	        startDate: new Date()
-	    })
-	    .on('changeDate', function(ev){
-	    	reschedule_date.datepicker('hide');
-	    });
+		/*Updated by Priya**********Starts here*/
+		//$('#reschedule_date').datepicker("setValue", new Date());
+		var nowTemp = new Date();
+		var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+		var reschedule_date = $('#reschedule_date').datepicker({
+	    	 onRender: function (date) {
+			        return date.valueOf() < now.valueOf() ? 'disabled' : '';
+			    }	    	
+	    }).on('changeDate', function(ev){
+	    	reschedule_date('hide');
+	    }).datepicker("setValue", new Date());
+		/*Updated by Priya**********Ends here*/
 		
 		var utc =  moment.utc(new Date());
 		var date = new Date().getTime();
