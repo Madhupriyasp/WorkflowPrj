@@ -476,12 +476,22 @@ $('#fetch').click(function(){
 			else
 				intractionToMarkInQueue(selectedStatuses);
 	});
+	
 	$('#reschedule').on('click',function(){
+		/*Updated by Priya**********Starts here*/
+		var statuses = [];
+		$(".chkbox:checked").each(function() {
+			statuses.push(this.id);
+		});
+		if(statuses.length > 10)
+			messageWindow.popUpMessage( "Select only 10 Interactions to be Scheduled at a time.", 3000 );	
+		else if(statuses.length == 0)
+			alertBox.show('Alert!','Please select an interaction to reschedule');
+		else
 		$('#reschedule_pop').toggle();
 		$('.popover').css('z-index','900');
 		$('#rescpop').css('height','250px');
-		/*Updated by Priya**********Starts here*/
-		//$('#reschedule_date').datepicker("setValue", new Date());
+		
 		var nowTemp = new Date();
 		var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
 		var reschedule_date = $('#reschedule_date').datepicker({
@@ -744,14 +754,28 @@ $('#submitAr')
 	$('#reschedule_modal').on('click',function(){
 		$('#reshcedule_modal_pop').toggle();
 		$('#reschedule_time_modal').timepicker();
-
-		var reschedule_date_modal = $('#reschedule_date_modal')
+		
+		/*Updated by Priya**********Starts here*/
+		//$('#reschedule_date').datepicker("setValue", new Date());
+		var nowTemp = new Date();
+		var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+		var reschedule_date_modal = $('#reschedule_date_modal').datepicker({
+	    	 onRender: function (date) {
+			        return date.valueOf() < now.valueOf() ? 'disabled' : '';
+			    }	    	
+	    }).on('changeDate', function(ev){
+	    	reschedule_date_modal.datepicker('hide');
+	    }).datepicker("setValue", new Date());
+		/*Updated by Priya**********Ends here*/
+	
+		
+		/*	var reschedule_date_modal = $('#reschedule_date_modal')
 		.datepicker({
 			startDate: new Date()
 		})
 		.on('changeDate', function(ev){
 			reschedule_date_modal.datepicker('hide');
-		});
+		});*/
 
 		var utc =  moment.utc(new Date())
 		var date = new Date().getTime();
