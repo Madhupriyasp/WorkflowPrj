@@ -89,6 +89,7 @@ function fillDateFieldsWithLatestDates()
 	var todate= currentDate.getMonth()+ 1 +"/"+ currentDate.getDate()+"/"+currentDate.getFullYear();
 	document.getElementById('inputDate2').value = todate ;
 	document.getElementById('inputDate1').value = todate ;
+s
 
 }
 
@@ -1654,6 +1655,8 @@ if(deletionof.length == 1)
 	
 	function intractionToSche(scheduleof)
 	{
+		
+		/*Edited by Priya*/
 		$('#Rescheduling_modal_content').empty();
 		/*
 		var schedule_id	=	scheduleof;

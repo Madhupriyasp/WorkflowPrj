@@ -12,7 +12,7 @@ $().ready(function() {
 	}).on('changeDate', function (ev) {
 	    
 	    //made changes to condition below
-	    var newDate = new Date(ev.date)
+	    var newDate = new Date(ev.date);
 	    checkout.setValue(newDate);
 	    checkin.hide();
 	    $('#inputDate2')[0].focus();
@@ -208,7 +208,7 @@ $().ready(function() {
 	var download_to_date = $('#download_to_date')
     .datepicker({
     	onRender: function(date) {
-    	     var after = new Date(download_from_date.date);
+    	   var after = new Date(download_from_date.date);
   	       after.setDate(after.getDate() + 30);
   	       if(now.valueOf() > after.valueOf())
   	    	   {
@@ -1155,6 +1155,9 @@ $('#requestDownload').click(function(){
 $('#downloadCsvChat').click(function(){
 	$('#downloadChat_pop').toggle();
 	$('#downloadChat_pop').css('height','255px');
+	var nowTemp = new Date();
+	$('#download_from_date').datepicker("setValue", nowTemp);
+	$('#download_to_dates').datepicker("setValue", new Date());
 	$("#download_from_date").val('');
 	$("#download_to_date").val('');
 	$("#chat_subacc").val('');
@@ -1169,8 +1172,11 @@ $('#downloadCsvChat').click(function(){
 			alertBox.show('Alert!',"Please Enter a Valid Account Number.");
 
 		}
+		
+
 });
 $('#downloadChatSubmit').click(function(e){
+	
 	var fromDate	= $("#download_from_date").val();
 	var toDate 		= $("#download_to_date").val();
 	var accNo 		= $("#chat_subacc").val();
@@ -1178,8 +1184,11 @@ $('#downloadChatSubmit').click(function(e){
 	var to;
 	var dateFlag = false;
 	var accountNumberList = [];
+	var datetRegex = new RegExp(/\b\d{1,2}[\/-]\d{1,2}[\/-]\d{4}\b/);
+
 	if(accNo != '' && fromDate != '' && toDate != '')
 	{
+		
 		if(accNo)
 		{
 			try
