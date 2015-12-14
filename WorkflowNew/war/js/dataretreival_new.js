@@ -1655,7 +1655,7 @@ if(deletionof.length == 1)
 	function intractionToSche(scheduleof)
 	{
 		$('#Rescheduling_modal_content').empty();
-		
+		/*
 		var schedule_id	=	scheduleof;
 		if(schedule_id	!=	'single' && schedule_id.length	==	0)
 		{
@@ -1701,13 +1701,16 @@ if(deletionof.length == 1)
 					}
 				}
 				else
-				{
+				{*/
 					var rescheduleDate	=	$('#reschedule_date').val();
 					var rescheduleTime  =   $('#reschedule_time').val();
-					if( (rescheduleDate != "") && (validateDate(rescheduleDate)) )
+					var datetRegex = new RegExp(/\b\d{1,2}[\/-]\d{1,2}[\/-]\d{4}\b/);
+					var timeRegex = new RegExp(/^(0?[1-9]|1[012])(:[0-5]\d) [APap][mM]$/);
+
+					if( (rescheduleDate != "") && (rescheduleDate.match(datetRegex)) )
 					{
 						
-						if( (rescheduleTime != "") && (validateTime(rescheduleTime))  ) 
+						if( (rescheduleTime != "") && (rescheduleTime.match(timeRegex)) ) 
 						{
 						var deleteFlag=false;
 						bootbox.dialog({
@@ -1744,7 +1747,6 @@ if(deletionof.length == 1)
 					}
 					else
 					{
-						//alertBox.show('Alert!',"Oops. Date is not valid. Please check..");
 						alertBox.show('Alert!','Oops. Time is not valid. Please check..');
 					}
 				}
@@ -1754,8 +1756,8 @@ if(deletionof.length == 1)
 						alertBox.show('Alert!','Oops. Date is not valid. Please check..');
 					}
 				}
-			}
-	}
+			/*}
+	}*/
 	function scheduleintraction(history_ID,delf,singleflag,displayCondition)
 	{
 		try
@@ -2316,7 +2318,7 @@ if(deletionof.length == 1)
 		
 	}
 
-	function validateDate(date)
+/*	function validateDate(date)
 	{
 	var dtRegex = new RegExp(/\b\d{1,2}[\/-]\d{1,2}[\/-]\d{4}\b/);
 	return dtRegex.test(date);
@@ -2326,4 +2328,4 @@ if(deletionof.length == 1)
 	var timeRegex = new RegExp(/^(0?[1-9]|1[012])(:[0-5]\d) [APap][mM]$/);
 	return timeRegex.test(time);
 	}
-
+*/
