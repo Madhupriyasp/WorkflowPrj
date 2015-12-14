@@ -1668,6 +1668,7 @@ if(deletionof.length == 1)
 				if(schedule_id	==	'single')
 				{
 					var rescheduleDate	=	new Date($('#reschedule_date_modal').val());
+					console.log(rescheduleDate);
 					if(rescheduleDate != "")
 					{
 						var deleteFlag=false;
@@ -1701,9 +1702,13 @@ if(deletionof.length == 1)
 				}
 				else
 				{
-					var rescheduleDate	=	new Date($('#reschedule_date').val());
-					if(rescheduleDate != "")
+					var rescheduleDate	=	$('#reschedule_date').val();
+					var rescheduleTime  =   $('#reschedule_time').val();
+					if( (rescheduleDate != "") && (validateDate(rescheduleDate)) )
 					{
+						
+						if( (rescheduleTime != "") && (validateTime(rescheduleTime))  ) 
+						{
 						var deleteFlag=false;
 						bootbox.dialog({
 							message:"Are you sure you want to Re-schedule the selected interaction(s)?",
@@ -1740,9 +1745,14 @@ if(deletionof.length == 1)
 					else
 					{
 						//alertBox.show('Alert!',"Oops. Date is not valid. Please check..");
+						alertBox.show('Alert!','Oops. Time is not valid. Please check..');
+					}
+				}
+					else
+					{
+						//alertBox.show('Alert!',"Oops. Date is not valid. Please check..");
 						alertBox.show('Alert!','Oops. Date is not valid. Please check..');
 					}
-					
 				}
 			}
 	}
@@ -2305,3 +2315,15 @@ if(deletionof.length == 1)
 		return subAccountNumSplittedArrayTemp;
 		
 	}
+
+	function validateDate(date)
+	{
+	var dtRegex = new RegExp(/\b\d{1,2}[\/-]\d{1,2}[\/-]\d{4}\b/);
+	return dtRegex.test(date);
+	}
+	function validateTime(time)
+	{
+	var timeRegex = new RegExp(/^(0?[1-9]|1[012])(:[0-5]\d) [APap][mM]$/);
+	return timeRegex.test(time);
+	}
+
