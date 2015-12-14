@@ -183,6 +183,10 @@ $().ready(function() {
     	}
     $('.timezone').append(timezone);
     
+    
+    
+    
+    
     var nowTemp = new Date();
 	var now 	= new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
 
@@ -193,18 +197,39 @@ $().ready(function() {
     	}
     })
     .on('changeDate', function(ev){
-    	download_from_date.datepicker('hide');
-    });
-    var download_to_date = $('#download_to_date')
+    	//download_from_date.datepicker('hide');
+    	var newDate = new Date(ev.date);
+     	download_to_date.setValue(newDate);
+     	download_from_date.hide();
+     	 $('#download_to_date')[0].focus();
+    }).data('datepicker');
+    
+	
+	var download_to_date = $('#download_to_date')
     .datepicker({
     	onRender: function(date) {
-    	    return date.valueOf() > now.valueOf() ? 'disabled' : '';
+    	     var after = new Date(download_from_date.date);
+  	       after.setDate(after.getDate() + 30);
+  	       if(now.valueOf() > after.valueOf())
+  	    	   {
+  	    	   return (date.valueOf() <= after.valueOf()) && (date.valueOf()>= download_from_date.date.valueOf()) ? '' : 'disabled';	    	   
+  	    	   }
+  	       else if(after.valueOf() > now.valueOf())
+  	    	   {
+  		       return (date.valueOf() <= now.valueOf()) && (date.valueOf()>= download_from_date.date.valueOf()) ? '' : 'disabled';
+  	    	   }
     	}
     })
     .on('changeDate', function(ev){
-    	download_to_date.datepicker('hide');
-    });
+    	download_to_date.hide();
+    }).data('datepicker');
 }); 
+
+
+
+
+
+
 $('#domain_wd').click(function()
 {
 	sortDomainNames();
@@ -476,7 +501,8 @@ $('#fetch').click(function(){
 			else
 				intractionToMarkInQueue(selectedStatuses);
 	});
-	
+/****************************************************************************/
+
 	$('#reschedule').on('click',function(){
 		/*Updated by Priya**********Starts here*/
 		var statuses = [];
@@ -501,6 +527,8 @@ $('#fetch').click(function(){
 	    }).on('changeDate', function(ev){
 	    	reschedule_date.datepicker('hide');
 	    }).datepicker("setValue", new Date());
+		
+		var reschedule_time = $('#reschedule_time').timepicker({});
 		/*Updated by Priya**********Ends here*/
 	
 		
@@ -534,9 +562,21 @@ $('#fetch').click(function(){
 		
 		$('#reschedule_time').timepicker();
 	});
-										
-	$('#markType').click(function(){							
-		$('#markType_pop').toggle();
+/****************************************************************************/
+								
+	$('#markType').click(function(){		
+		var statuses = [];
+		$(".chkbox:checked").each(function() {
+			statuses.push(this.id);
+		});
+		if(statuses.length > 10)
+			messageWindow.popUpMessage( "Select only 10 Interactions to be Scheduled at a time.", 3000 );	
+		else if(statuses.length == 0)
+			alertBox.show('Alert!','Please select an interaction to reschedule');
+		else
+			{
+			$('#markType_pop').toggle();
+			
 		$('#markType_pop').css('height','200px');
 		var interactionIdArray = new Array();
 		var chkId;
@@ -568,6 +608,7 @@ $('#fetch').click(function(){
 		accNoList 						= 	interactionIdArray.join(',');
 		$('#accNos').val(accNoList);
 		$('#accNos').attr('title',accNoList);
+			}
 	});
 	$('#markTypeSelected').click(function()
 			{						
@@ -750,6 +791,7 @@ $('#submitAr')
 		if(cur_val == zone) alertBox.show('Alert!',"The current time zone is "+ zone);
 		$('.timezone_value').val((cur_val === "PST") ? "PDT" : "PST");
 	});
+/****************************************************************************/
 
 	$('#reschedule_modal').on('click',function(){
 		$('#reshcedule_modal_pop').toggle();
@@ -809,6 +851,7 @@ $('#submitAr')
 
 	});
 
+	/****************************************************************************/
 
 	$('#markTypeValue').on('click',function(){
 		cur_val = $('#markTypeValue').val();
@@ -882,6 +925,7 @@ $('#submitAr')
 	
 	$('#rescSelected').click(function()
 			{
+	
 		var statuses = [];
 			$(".chkbox:checked").each(function() {
 			statuses.push(this.id);
@@ -1115,6 +1159,17 @@ $('#downloadCsvChat').click(function(){
 	$("#download_to_date").val('');
 	$("#chat_subacc").val('');
 });
+	//Added this code by Priya
+	$('#chat_subacc').blur(function()
+	{
+		var accNo 		= $("#chat_subacc").val();
+
+		if( (accNo == '')||(isNaN(accNo)) )
+		{
+			alertBox.show('Alert!',"Please Enter a Valid Account Number.");
+
+		}
+});
 $('#downloadChatSubmit').click(function(e){
 	var fromDate	= $("#download_from_date").val();
 	var toDate 		= $("#download_to_date").val();
@@ -1177,6 +1232,8 @@ $('#close_resc').click(function()
 {
 	$('#reschedule_pop').hide();	
 });
+
+
 
 $('#close_migr').click(function()
 {
