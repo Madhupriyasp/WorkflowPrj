@@ -225,15 +225,13 @@ $().ready(function() {
     }).on('changeDate', function(ev){
     	download_to_date.hide();
     }).data('datepicker');
-	  
+	$("#download_to_date").focus(function(){
+		$("#download_from_date").datepicker("hide");
+
+	});  
 }); 
 
-
-/*$("#download_to_date").blur(function(){
-	$("#download_to_date").datepicker("hide");
-
-});*/
-
+ 
 $('#domain_wd').click(function()
 {
 	sortDomainNames();
@@ -1158,7 +1156,7 @@ $('#requestDownload').click(function(){
 });
 $('#downloadCsvChat').click(function(){
 	$('#downloadChat_pop').toggle();
-	$('#downloadChat_pop').css('height','255px');
+	$('#downloadChat_pop').css('height','272px');
 	var nowTemp = new Date();
 	$('#download_from_date').datepicker("setValue", nowTemp);
 	$('#download_to_dates').datepicker("setValue", new Date());
@@ -1167,7 +1165,7 @@ $('#downloadCsvChat').click(function(){
 	$("#chat_subacc").val('');
 });
 	//Added this code by Priya
-	$('#chat_subacc').blur(function()
+/*	$('#chat_subacc').blur(function()
 	{
 		var accNo 		= $("#chat_subacc").val();
 
@@ -1178,7 +1176,35 @@ $('#downloadCsvChat').click(function(){
 		}
 		
 
-});
+});*/
+
+$('#chat_subacc').blur(function()
+		{
+			var accNo 		= $("#chat_subacc").val();
+
+			if( (accNo == '')||(isNaN(accNo)) )
+			{
+				var status ="Enter a Valid Account Number.!";
+				$('#notification').html(status);	
+				$('#notification').show();
+				$('#chat_subacc').css('border-color','red');
+
+			//	alertBox.show('Alert!',"Please Enter a Valid Account Number.");
+
+			}
+			else
+				{
+				$('#notification').hide();
+				$('#chat_subacc').css('border-color','#cccccc');
+	}
+
+		
+	});
+
+	$("#chat_subacc").focus(function(){
+		$("#download_from_date").datepicker("hide");
+		$("#download_to_date").datepicker("hide");
+	}); 
 $('#downloadChatSubmit').click(function(e){
 	
 	var fromDate	= $("#download_from_date").val();
