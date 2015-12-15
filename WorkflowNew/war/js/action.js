@@ -201,8 +201,11 @@ $().ready(function() {
      	download_from_date.hide();
      	 $('#download_to_date')[0].focus();
     }).data('datepicker');
-    
-	
+ 
+		$("#download_from_date").focus(function(){
+		$("#download_to_date").datepicker("hide");
+
+	});
 	var download_to_date = $('#download_to_date')
     .datepicker({
     	onRender: function(date) {
@@ -226,11 +229,10 @@ $().ready(function() {
 }); 
 
 
-$("#download_to_date").blur(function(){
+/*$("#download_to_date").blur(function(){
 	$("#download_to_date").datepicker("hide");
 
-});
-
+});*/
 
 $('#domain_wd').click(function()
 {
