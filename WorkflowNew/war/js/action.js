@@ -189,7 +189,6 @@ $().ready(function() {
     
     var nowTemp = new Date();
 	var now 	= new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
-
 	var download_from_date = $('#download_from_date')
     .datepicker({
     	onRender: function(date) {
@@ -197,7 +196,6 @@ $().ready(function() {
     	}
     })
     .on('changeDate', function(ev){
-    	//download_from_date.datepicker('hide');
     	var newDate = new Date(ev.date);
      	download_to_date.setValue(newDate);
      	download_from_date.hide();
@@ -212,22 +210,26 @@ $().ready(function() {
   	       after.setDate(after.getDate() + 30);
   	       if(now.valueOf() > after.valueOf())
   	    	   {
-  	    	   return (date.valueOf() <= after.valueOf()) && (date.valueOf()>= download_from_date.date.valueOf()) ? '' : 'disabled';	    	   
+  	    	   return (date.valueOf() <= after.valueOf()) && (date.valueOf()>= download_from_date.date.valueOf()) ? '' : 'disabled';
+
   	    	   }
   	       else if(after.valueOf() > now.valueOf())
   	    	   {
   		       return (date.valueOf() <= now.valueOf()) && (date.valueOf()>= download_from_date.date.valueOf()) ? '' : 'disabled';
+
   	    	   }
     	}
-    })
-    .on('changeDate', function(ev){
+    }).on('changeDate', function(ev){
     	download_to_date.hide();
     }).data('datepicker');
+	  
 }); 
 
 
+$("#download_to_date").blur(function(){
+	$("#download_to_date").datepicker("hide");
 
-
+});
 
 
 $('#domain_wd').click(function()
